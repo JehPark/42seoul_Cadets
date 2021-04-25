@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 09:57:58 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/25 10:00:37 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/26 08:03:50 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ char			*ft_strncat(char *dest, char *src, int n);
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
-char			*ft_strstr(char *str, char *to_find);
+char			*ft_strstr(const char *big, const char *little);
+char			*ft_strnstr(const char *big, const char *little, size_t len);
+int				ft_strcmp(char *s1, char *s2);
+int				ft_strncmp(char *s1, char *s2, unsigned int n);
 
 #endif

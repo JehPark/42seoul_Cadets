@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/25 10:00:45 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/26 07:58:13 by jehpark          ###   ########.fr       */
+/*   Created: 2021/04/26 08:01:26 by jehpark           #+#    #+#             */
+/*   Updated: 2021/04/26 08:02:43 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *big, const char *little)
+int		ft_strcmp(char *s1, char *s2)
 {
-	char	*finder;
-	char	*ans;
-	char	*word;
-
-	if (!*little)
-		return (str);
-	finder = big;
-	word = little;
-	while (*finder)
+	while (*s1 && *s2)
 	{
-		ans = finder;
-		while (*word && *finder == *word)
-		{
-			finder++;
-			word++;
-		}
-		if (*word == 0)
-			return (ans);
-		word = to_find;
-		if (!*finder)
-			break ;
-		finder++;
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
 	}
-	return (0);
+	return (*s1 - *s2);
 }

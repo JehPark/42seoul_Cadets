@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/25 10:00:45 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/26 07:58:13 by jehpark          ###   ########.fr       */
+/*   Created: 2021/04/26 08:03:58 by jehpark           #+#    #+#             */
+/*   Updated: 2021/04/26 08:06:14 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *big, const char *little)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	char	*finder;
-	char	*ans;
-	char	*word;
+	unsigned int	i;
 
-	if (!*little)
-		return (str);
-	finder = big;
-	word = little;
-	while (*finder)
+	if (n == 0)
+		return (0);
+	i = 0;
+	while (i < n && *s1 && *s2)
 	{
-		ans = finder;
-		while (*word && *finder == *word)
-		{
-			finder++;
-			word++;
-		}
-		if (*word == 0)
-			return (ans);
-		word = to_find;
-		if (!*finder)
-			break ;
-		finder++;
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s2++;
+		s1++;
+		i++;
 	}
-	return (0);
+	if (i == n)
+	{
+		s1--;
+		s2--;
+	}
+	return (*s1 - *s2);
 }
