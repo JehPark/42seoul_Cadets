@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 09:57:58 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/26 08:57:50 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/26 10:19:21 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,11 @@ int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+
+void			*ft_memalloc(size_t size);
+void			ft_memdel(void **ap);
+char			*ft_strnew(size_t size);
+void			ft_strdel(char **as);
+void			ft_strclr(char *s);
 
 #endif
