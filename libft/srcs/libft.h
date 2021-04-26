@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 09:57:58 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/26 10:51:27 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/26 19:56:01 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,9 @@ void			ft_strdel(char **as);
 void			ft_strclr(char *s);
 void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
+char			*ft_strmap(char const *s, char (*f)(char));
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int				ft_strequ(char const *s1, char const *s2);
+int				ft_strnequ(char const *s1, char const *s2, size_t n);
 
 #endif
