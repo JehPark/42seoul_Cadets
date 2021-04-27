@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/26 19:58:24 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 08:07:57 by jehpark          ###   ########.fr       */
+/*   Created: 2021/04/27 09:01:32 by jehpark           #+#    #+#             */
+/*   Updated: 2021/04/27 09:40:20 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strnequ(char const *s1, char const *s2, size_t n)
+char	*ft_itoa(int n)
 {
-	int i;
-	int	ans;
+	int		len;
+	char	*ret;
+	int		flag;
 
-	i = 0;
-	while (*s1 && *s1 == *s2 && i < n)
+	len = ft_intdigit(n);
+	flag = n < 0 ? 1 : 0;
+	ret = (char *)malloc(sizeof(char) * (flag + len + 1));
+	ret += flag + len + 1;
+	*ret = '\0';
+	ret--;
+	n *= flag == 1 ? -1 : 1;
+	while (n)
 	{
-		s1++;
-		s2++;
-		i++;
+		if (n / 10)
+			*ret-- = (n % 10) + '0';
+		else
+			*ret = (n % 10) + '0';
+		n /= 10;
 	}
-	if (i == n)
+	if (flag)
 	{
-		s1--;
-		s2--;
+		ret--;
+		*ret = '-';
 	}
-	ans = (*s1 - *s2) == 0 ? 1 : 0;
-	return (ans);
+	return (ret);
 }

@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/26 19:58:24 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 08:07:57 by jehpark          ###   ########.fr       */
+/*   Created: 2021/04/27 07:30:44 by jehpark           #+#    #+#             */
+/*   Updated: 2021/04/27 07:37:18 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strnequ(char const *s1, char const *s2, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	int	ans;
+	char	*ret;
+	int		size1;
+	int		size2;
+	char	*temp;
 
-	i = 0;
-	while (*s1 && *s1 == *s2 && i < n)
-	{
-		s1++;
-		s2++;
-		i++;
-	}
-	if (i == n)
-	{
-		s1--;
-		s2--;
-	}
-	ans = (*s1 - *s2) == 0 ? 1 : 0;
-	return (ans);
+	size1 = ft_strlen(s1);
+	size2 = ft_strlen(s2);
+	ret = (char *)malloc(sizeof(char) * (size1 + size2 + 1));
+	temp = ret;
+	while (*s1)
+		*temp++ = *s1++;
+	while (*s2)
+		*temp++ = *s2++;
+	*temp = '\0';
+	return (ret);
 }

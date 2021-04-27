@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/26 19:58:24 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 08:07:57 by jehpark          ###   ########.fr       */
+/*   Created: 2021/04/27 08:12:41 by jehpark           #+#    #+#             */
+/*   Updated: 2021/04/27 08:47:36 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strnequ(char const *s1, char const *s2, size_t n)
+char	**ft_strsplit(char const *s, char c)
 {
-	int i;
-	int	ans;
+	char	**ret;
+	char	*word;
+	char	*start;
+	int		idx;
 
-	i = 0;
-	while (*s1 && *s1 == *s2 && i < n)
+	idx = 0;
+	ret = (char **)malloc(sizeof(char *) * (ft_wordcnt(s, c) + 1));
+	while (*s)
 	{
-		s1++;
-		s2++;
-		i++;
+		if (*s != c)
+		{
+			start = s;
+			while (*s != c)
+				s++;
+			word = (char *)malloc(sizeof(char) * (s - start + 1));
+			ft_strscpy(word, start, s);
+			ret[idx++] = word;
+		}
+		else
+			s++;
 	}
-	if (i == n)
-	{
-		s1--;
-		s2--;
-	}
-	ans = (*s1 - *s2) == 0 ? 1 : 0;
-	return (ans);
+	ret[idx] = '\0';
+	return (ret);
 }

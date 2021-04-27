@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 09:57:58 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/26 19:56:01 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/27 08:42:09 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,13 @@ char			*ft_strmap(char const *s, char (*f)(char));
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int				ft_strequ(char const *s1, char const *s2);
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
+char			*ft_strsub(char const *s, unsigned int start, size_t len);
+char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strtrim(char const *s);
+char			**ft_strsplit(char const *s, char c);
+int				ft_wordcnt(char const *s, char c);
+void			ft_strscpy(char *word, char *start, char *end);
+char			*ft_itoa(int n);
+int				ft_intdigit(int n);
 
 #endif

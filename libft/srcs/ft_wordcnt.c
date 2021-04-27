@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_wordcnt.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/26 19:58:24 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 08:07:57 by jehpark          ###   ########.fr       */
+/*   Created: 2021/04/27 08:17:45 by jehpark           #+#    #+#             */
+/*   Updated: 2021/04/27 08:29:33 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strnequ(char const *s1, char const *s2, size_t n)
+int		ft_wordcnt(char const *s, char c)
 {
-	int i;
-	int	ans;
+	int cnt;
 
-	i = 0;
-	while (*s1 && *s1 == *s2 && i < n)
+	cnt = 0;
+	while (*s)
 	{
-		s1++;
-		s2++;
-		i++;
+		if (*s != c)
+		{
+			cnt++;
+			while (*s != c)
+				s++;
+		}
+		else
+			s++;
 	}
-	if (i == n)
-	{
-		s1--;
-		s2--;
-	}
-	ans = (*s1 - *s2) == 0 ? 1 : 0;
-	return (ans);
+	return (cnt);
 }

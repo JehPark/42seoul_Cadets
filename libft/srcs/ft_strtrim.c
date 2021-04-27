@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/26 19:58:24 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 08:07:57 by jehpark          ###   ########.fr       */
+/*   Created: 2021/04/27 07:40:50 by jehpark           #+#    #+#             */
+/*   Updated: 2021/04/27 08:06:31 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strnequ(char const *s1, char const *s2, size_t n)
+char	*ft_strtrim(char const *s)
 {
-	int i;
-	int	ans;
+	unsigned char	*rear;
+	unsigned char	*front;
+	unsigned char	*ret;
+	unsigned char	*temp;
 
-	i = 0;
-	while (*s1 && *s1 == *s2 && i < n)
-	{
-		s1++;
-		s2++;
-		i++;
-	}
-	if (i == n)
-	{
-		s1--;
-		s2--;
-	}
-	ans = (*s1 - *s2) == 0 ? 1 : 0;
-	return (ans);
+	while (*s == ' ' || *s == '\n' || *s == '\t')
+		s++;
+	front = s;
+	while (*s)
+		s++;
+	s--;
+	while (*s == ' ' || *s == '\n' || *s == '\t')
+		s--;
+	rear = s;
+	ret = (unsigned char *)malloc(rear - front + 2);
+	temp = ret;
+	while (front != rear)
+		*temp++ = *front++;
+	*temp = '\0';
+	return (ret);
 }

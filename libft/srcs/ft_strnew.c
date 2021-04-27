@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 10:12:09 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/26 10:16:45 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/27 08:08:37 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*ft_strnew(size_t size)
 {
 	char	*ret;
+
 	ret = (char *)ft_memalloc(size + 1);
 	return (ret);
 }
