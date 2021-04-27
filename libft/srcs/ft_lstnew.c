@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 19:03:24 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 20:16:29 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/28 08:44:34 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*new;
 
-	if (!new = (t_list *)malloc(sizeof(t_list)))
+	if (!(new = (t_list *)malloc(sizeof(t_list))))
 		return (NULL);
 	if (!content)
 	{
@@ -25,7 +25,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	else
 	{
-		if (new->content = (void *)malloc(content_size))
+		if (!(new->content = (void *)malloc(content_size)))
 			return (NULL);
 		ft_memcpy(new->content, content, content_size);
 		new->content_size = content_size;
