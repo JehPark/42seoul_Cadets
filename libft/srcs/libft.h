@@ -64,5 +64,13 @@ int				ft_wordcnt(char const *s, char c);
 void			ft_strscpy(char *word, char *start, char *end);
 char			*ft_itoa(int n);
 int				ft_intdigit(int n);
+void			ft_putchar(char c);
+void			ft_putstr(char const *s);
+void			ft_putendl(char const *s);
+void			ft_putnbr(int nbr);
+void			ft_putchar_fd(char c, int fd);
+void			ft_putstr_fd(char const *s, int fd);
+void			ft_putendl_fd(char const* s, int fd);
+void			ft_putnbr_fd(int n, int fd);
 
 #endif
