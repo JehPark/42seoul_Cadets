@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 10:00:45 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/26 07:57:11 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/27 10:58:44 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	i = 0;
 	j = 0;
 	if (!*little)
-		return (big);
+		return (char *)(big);
 	while (big[i] && i < len)
 	{
 		while ((big[i + j] == little[j]) && little[j] && (i + j) < len)

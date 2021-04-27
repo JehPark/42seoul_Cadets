@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 08:12:41 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 08:47:36 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/27 10:51:01 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	**ft_strsplit(char const *s, char c)
 	{
 		if (*s != c)
 		{
-			start = s;
+			start = (char *)s;
 			while (*s != c)
 				s++;
 			word = (char *)malloc(sizeof(char) * (s - start + 1));

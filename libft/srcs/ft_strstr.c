@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 10:00:45 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/26 07:58:13 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/27 10:58:17 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	*ft_strstr(const char *big, const char *little)
 	char	*word;
 
 	if (!*little)
-		return (str);
-	finder = big;
-	word = little;
+		return (char *)(big);
+	finder =(char *)big;
+	word = (char *)little;
 	while (*finder)
 	{
 		ans = finder;
@@ -32,7 +32,7 @@ char	*ft_strstr(const char *big, const char *little)
 		}
 		if (*word == 0)
 			return (ans);
-		word = to_find;
+		word = (char *)little;
 		if (!*finder)
 			break ;
 		finder++;

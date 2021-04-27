@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 07:40:50 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 08:06:31 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/27 11:03:24 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 char	*ft_strtrim(char const *s)
 {
-	unsigned char	*rear;
-	unsigned char	*front;
-	unsigned char	*ret;
-	unsigned char	*temp;
+	char	*rear;
+	char	*front;
+	char	*ret;
+	char	*temp;
 
 	while (*s == ' ' || *s == '\n' || *s == '\t')
 		s++;
-	front = s;
+	front = (char *)s;
 	while (*s)
 		s++;
 	s--;
 	while (*s == ' ' || *s == '\n' || *s == '\t')
 		s--;
-	rear = s;
-	ret = (unsigned char *)malloc(rear - front + 2);
+	rear = (char *)s;
+	ret = (char *)malloc(rear - front + 2);
 	temp = ret;
-	while (front != rear)
+	while (front != rear + 1)
 		*temp++ = *front++;
 	*temp = '\0';
 	return (ret);

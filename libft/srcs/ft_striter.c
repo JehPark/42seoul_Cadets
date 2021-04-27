@@ -6,13 +6,13 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 10:37:52 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/26 10:40:25 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/27 10:55:19 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_striter(char *s, void (*f)(char *))
+void		ft_striter(char *s, void (*f)(char *))
 {
 	while (*s && f)
 	{

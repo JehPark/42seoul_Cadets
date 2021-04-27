@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:52:17 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 09:59:51 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/27 11:00:21 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putnbr(int n)
 	}
 	else if (n < 0)
 	{
-		ft_putchar('-')
+		ft_putchar('-');
 		ft_putnbr(-n);
 	}
 	else if (n > 9)

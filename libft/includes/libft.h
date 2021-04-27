@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 09:57:58 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 08:42:09 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/27 10:59:34 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 # include <unistd.h>
 
 void			*ft_memset(void *s, int c, size_t n);
-void			ft_bzeror(void *s, size_t n);
+void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *s1, const void *s2, size_t n);
 void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
-void			*ft_memmove(void *dest, const void *src size_t n);
+void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t			ft_strlen(const char *s);
@@ -61,7 +61,7 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 int				ft_wordcnt(char const *s, char c);
-void			ft_strscpy(char *word, char *start, char *end);
+void			ft_strscpy(char *word, char *start, const char *end);
 char			*ft_itoa(int n);
 int				ft_intdigit(int n);
 void			ft_putchar(char c);

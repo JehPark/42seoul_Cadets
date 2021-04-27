@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:07:43 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 09:10:59 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/27 10:45:54 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int		ft_intdigit(int n)
 
 	len = 0;
 	nbr = n > 0 ? n : -n;
-	while (n)
+	while (nbr)
 	{
-		n /= 10;
+		nbr /= 10;
 		len++;
 	}
 	return (len);

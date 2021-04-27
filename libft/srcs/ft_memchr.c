@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 20:15:33 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/24 20:18:58 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/27 10:52:10 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	s_copy = (const unsigned char *)s;
 	while (n)
 	{
-		if (s_copy == (unsigned char)c)
-			return (s_copy);
+		if (*s_copy == (unsigned char)c)
+			return (void *)(s_copy);
 		s_copy++;
 		n--;
 	}

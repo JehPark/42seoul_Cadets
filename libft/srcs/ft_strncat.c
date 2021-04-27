@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 09:36:17 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/25 09:38:55 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/27 10:38:32 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strncat(char *dest, char *src, int n)
 {
-	char	dest_cp;
+	char	*dest_cp;
 	int		i;
 
 	i = 0;
