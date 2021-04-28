@@ -1,0 +1,66 @@
+Part1 functions
+                                                                                                                                                                 
+FUNCTION              NORME          COMPIL.     FORBIDDEN FUNC.  TESTS               RESULT             
+ft_memset             not found      success     clean            ✓✓✓✓                		OK                 
+ft_bzero              not found      success     clean            ✓✓                  			OK                 
+ft_calloc             NTI            NTI         NTI              NTI                 			NTI                
+ft_memcpy             not found      success     clean            ✓✓✓                 		OK                
+ft_memccpy            not found      success     clean            ✓✓✓✓                		OK                 
+ft_memmove            not found      success     clean            ✓✓✓✓✓               		OK                 
+ft_memchr             not found      success     clean            ✓✓✓✓✓✓              		OK                 
+ft_memcmp             not found      success     clean            ✓✓✓✓✓✓✓✓✓           		OK                 
+ft_strlen             not found      success     clean            ✓✓✓✓✓✓              		OK                 
+ft_strdup             not found      success     clean            ✓                   			OK                 
+ft_strlcat            not found      success     clean            ✓✓✓✓✓✓✓✓✓           		OK                 
+ft_strlcpy            NTI            NTI         NTI              NTI                 			NTI                
+ft_strchr             not found      success     clean            ✓✓✓✓✓✓              		OK                 
+ft_strrchr            not found      success     clean            ✓✓✓✓✓✓✓✓            		OK                 
+ft_strnstr            not found      success     clean            ✓✓✓✓✓✓✓✓✓✓          		OK                 
+ft_strncmp            not found      success     clean            ✓✓✓✓✓✓✓✓✓✓✓         		OK                 
+ft_atoi               not found      success     clean            ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓ 	OK                 
+ft_isalpha            not found      success     clean            ✓✓✓✓✓✓✓             		OK                 
+ft_isdigit            not found      success     clean            ✓✓✓✓✓✓✓             		OK                 
+ft_isalnum            not found      success     clean            ✓✓✓✓✓✓✓             		OK                 
+ft_isascii            not found      success     clean            ✓✓✓✓✓✓✓✓            		OK                 
+ft_isprint            not found      success     clean            ✓✓✓✓✓✓✓             		OK                 
+ft_toupper            not found      success     clean            ✓✓✓✓✓✓✓             		OK                 
+ft_tolower            not found      success     clean            ✓✓✓✓✓✓✓             		OK
+
+Part2 functions
+                                                                                                                                                                                                   
+FUNCTION              NORME          COMPIL.     FORBIDDEN FUNC.  TESTS               RESULT             
+ft_strmapi            not found      success     clean            ✓                   		OK                 
+ft_substr             NTI            NTI         NTI              NTI                 		NTI                
+ft_strjoin            not found      success     clean            ✓✓✓✓                		OK                 
+ft_strtrim            not found      failure     compil. failed   compil. failed      		KO                 
+ft_split              NTI            NTI         NTI              NTI                 		NTI                
+ft_itoa               not found      success     clean            ✓✓✓✓✓✓✓✓✓✓          	OK                 
+ft_putchar_fd         not found      success     clean            ✓✓✓✓✓✓✓             	OK                 
+ft_putstr_fd          not found      success     clean            ✓✓✓✓                	OK                 
+ft_putendl_fd         not found      success     clean            ✓✓✓✓                	OK                 
+ft_putnbr_fd          not found      success     clean            ✓✓✓✓✓✓✓✓✓           	OK  
+
+
+Additional functions                                                                                                                                                                                                                                                                                                                                  
+FUNCTION              NORME          COMPIL.     FORBIDDEN FUNC.  TESTS               RESULT                                                                               
+ft_isspace            not found      success     clean            ✓✓✓✓✓✓✓             	OK                                                                                  
+ft_memalloc           not found      success     clean            ✓                   		OK                                                                                   
+ft_memdel             not found      success     clean            ✓                   	OK                                                                                   
+ft_putchar            not found      success     clean            ✓✓✓✓✓✓✓             	OK                                                                                   
+ft_putendl            not found      success     clean            ✓✓✓✓                	OK                                                                                   
+ft_putnbr             not found      success     clean            ✓✓✓✓✓✓✓✓✓           	OK                                                                                   
+ft_putstr             not found      success     clean            ✓✓✓✓                	OK                                                                                   
+ft_strcat             not found      success     clean            ✓✓✓                 		OK                                                                                   
+ft_strclr             not found      success     clean            ✓                   		OK                                                                                   
+ft_strcmp             not found      success     clean            ✓✓✓✓✓✓✓             	OK                                                                                   
+ft_strcpy             not found      success     clean            ✓✓✓                 		OK                                                                                   
+ft_strdel             not found      success     clean            ✓                   		OK                                                                                   
+ft_strequ             not found      success     clean            ✓✓✓✓✓✓✓             	OK                                                                                   
+ft_striter            not found      success     clean            ✓                   		OK                                                                                   
+ft_striteri           not found      success     clean            ✓                   		OK                                                                                   
+ft_strmap             not found      success     clean            ✓                   		OK                                                                                   
+ft_strncat            not found      success     clean            ✓✓✓✓✓               	OK                                                                                   
+ft_strncpy            not found      success     clean            ✓✓✓✓✓✓              	OK                                                                                   
+ft_strnequ            not found      success     clean            ✓✓✓✓✓✓✓✓✓✓✓         	OK                                                                                   
+ft_strnew             not found      success     clean            ✓✓                  		OK                                                                                   
+ft_strstr             not found      success     clean            ✓✓✓✓✓✓✓             	OK 
