@@ -3,7 +3,7 @@ $> hostname; uname -msr
 DESKTOP-IAN6FRI
 Linux 4.19.128-microsoft-standard x86_64
 $> date
-Wed Apr 28 09:17:35 KST 2021
+Wed Apr 28 10:44:33 KST 2021
 $> gcc --version
 gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Copyright (C) 2019 Free Software Foundation, Inc.
@@ -92,7 +92,7 @@ $> make bonus
 make: *** No rule to make target 'bonus'.  Stop.
 
 $> ls -la libft.a
--rw-r--r-- 1 jeheon jeheon 101896 Apr 28 09:17 /home/jeheon/Desktop/Cardets/libft/libft-war-machine/dirlibft/libft.a
+-rw-r--r-- 1 jeheon jeheon 101882 Apr 28 10:44 /home/jeheon/Desktop/Cardets/libft/libft-war-machine/dirlibft/libft.a
 
 = Part1_functions ==============================================================
 
@@ -274,14 +274,51 @@ norminette : command not found
 
 $> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_memcmp.c main.c libft.a -o user_exe
 
-/usr/bin/ld: /tmp/main-85cb2a.o: in function `main':
-/home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_memcmp/main.c:36: undefined reference to `ft_memcmp'
-/usr/bin/ld: /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_memcmp/main.c:38: undefined reference to `ft_memcmp'
-/usr/bin/ld: /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_memcmp/main.c:40: undefined reference to `ft_memcmp'
-/usr/bin/ld: /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_memcmp/main.c:42: undefined reference to `ft_memcmp'
-/usr/bin/ld: /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_memcmp/main.c:44: undefined reference to `ft_memcmp'
-/usr/bin/ld: /tmp/main-85cb2a.o:/home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_memcmp/main.c:46: more undefined references to `ft_memcmp' follow
-clang-9: error: linker command failed with exit code 1 (use -v to see invocation)
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./user_exe 08
+$> diff -U 3 user_output_test08 test08.output
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./user_exe 09
+$> diff -U 3 user_output_test09 test09.output
+
+Diff OK :D
 
 = ft_strlen.c ==================================================================
 $> norminette ft_strlen.c | grep -E '(Error|Warning)'
@@ -331,11 +368,12 @@ $> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strdup.c main.c libft.a
 = Test 1 ===================================================
 $> ./user_exe 01
 $> diff -U 3 user_output_test01 test01.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strdup/user_output_test01	2021-04-28 09:17:43.750000000 +0900$
-+++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strdup/test01.output	2021-04-28 08:51:39.070000000 +0900$
-@@ -0,0 +1 @@$
-+lorem ipsum dolor sit amet$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strdup/user_output_test01	2021-04-28 10:44:41.990000000 +0900$
++++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strdup/test01.output	2021-04-28 09:58:00.370000000 +0900$
+@@ -1 +1 @@$
+-lorem ipsum dolor sit amet$
 \ No newline at end of file$
++lorem ipsum dolor sit amet$
 
 Diff KO :(
 
@@ -425,7 +463,7 @@ Diff OK :D
 = Test 5 ===================================================
 $> ./user_exe 05
 $> diff -U 3 user_output_test05 test05.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strchr/user_output_test05	2021-04-28 09:17:45.510000000 +0900$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strchr/user_output_test05	2021-04-28 10:44:43.810000000 +0900$
 +++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strchr/test05.output	2021-04-28 08:51:39.070000000 +0900$
 @@ -1 +0,0 @@$
 -NULL$
@@ -435,7 +473,7 @@ Diff KO :(
 = Test 6 ===================================================
 $> ./user_exe 06
 $> diff -U 3 user_output_test06 test06.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strchr/user_output_test06	2021-04-28 09:17:45.520000000 +0900$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strchr/user_output_test06	2021-04-28 10:44:43.840000000 +0900$
 +++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strchr/test06.output	2021-04-28 08:51:39.070000000 +0900$
 @@ -1 +0,0 @@$
 -NULL$
@@ -473,49 +511,33 @@ Diff OK :D
 = Test 5 ===================================================
 $> ./user_exe 05
 $> diff -U 3 user_output_test05 test05.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strrchr/user_output_test05	2021-04-28 09:17:46.300000000 +0900$
-+++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strrchr/test05.output	2021-04-28 08:51:39.080000000 +0900$
-@@ -1 +1 @@$
--^B$
-\ No newline at end of file$
-+NULL$
-\ No newline at end of file$
 
-Diff KO :(
+Diff OK :D
 = Test 6 ===================================================
 $> ./user_exe 06
 $> diff -U 3 user_output_test06 test06.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strrchr/user_output_test06	2021-04-28 09:17:46.320000000 +0900$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strrchr/user_output_test06	2021-04-28 10:44:44.600000000 +0900$
 +++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strrchr/test06.output	2021-04-28 08:51:39.080000000 +0900$
-@@ -1,2 +0,0 @@$
--^B$
--Return value is false$
+@@ -1 +0,0 @@$
+-NULL$
 \ No newline at end of file$
 
 Diff KO :(
 = Test 7 ===================================================
 $> ./user_exe 07
 $> diff -U 3 user_output_test07 test07.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strrchr/user_output_test07	2021-04-28 09:17:46.350000000 +0900$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strrchr/user_output_test07	2021-04-28 10:44:44.620000000 +0900$
 +++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strrchr/test07.output	2021-04-28 08:51:39.080000000 +0900$
-@@ -1,2 +0,0 @@$
--M-s^O^^M-z1M-mIM-^IM-Q^HM-^IM-bHM-^CM-dM-pPTIM-GM-@`aL$
--Return value is false$
+@@ -1 +0,0 @@$
+-NULL$
 \ No newline at end of file$
 
 Diff KO :(
 = Test 8 ===================================================
 $> ./user_exe 08
 $> diff -U 3 user_output_test08 test08.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strrchr/user_output_test08	2021-04-28 09:17:46.370000000 +0900$
-+++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strrchr/test08.output	2021-04-28 08:51:39.080000000 +0900$
-@@ -1 +1 @@$
--^B$
-\ No newline at end of file$
-+NULL$
-\ No newline at end of file$
 
-Diff KO :(
+Diff OK :D
 
 = ft_strnstr.c =================================================================
 $> norminette ft_strnstr.c | grep -E '(Error|Warning)'
@@ -635,7 +657,7 @@ Diff OK :D
 = Test 11 ==================================================
 $> ./user_exe 11
 $> diff -U 3 user_output_test11 test11.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strncmp/user_output_test11	2021-04-28 09:17:47.950000000 +0900$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strncmp/user_output_test11	2021-04-28 10:44:46.380000000 +0900$
 +++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_strncmp/test11.output	2021-04-28 08:51:39.070000000 +0900$
 @@ -1 +1 @@$
 --1$
@@ -652,14 +674,115 @@ norminette : command not found
 
 $> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_atoi.c main.c libft.a -o user_exe
 
-/home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_atoi/main.c:47:19: error: implicit declaration of function 'ft_atoi' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-                ft_print_result(ft_atoi("0"));
-                                ^
-/home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_atoi/main.c:47:19: note: did you mean 'ft_itoa'?
-/home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_atoi/../../../libft.h:72:9: note: 'ft_itoa' declared here
-char                    *ft_itoa(int n);
-                         ^
-1 error generated.
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./user_exe 08
+$> diff -U 3 user_output_test08 test08.output
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./user_exe 09
+$> diff -U 3 user_output_test09 test09.output
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./user_exe 10
+$> diff -U 3 user_output_test10 test10.output
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./user_exe 11
+$> diff -U 3 user_output_test11 test11.output
+
+Diff OK :D
+= Test 12 ==================================================
+$> ./user_exe 12
+$> diff -U 3 user_output_test12 test12.output
+
+Diff OK :D
+= Test 13 ==================================================
+$> ./user_exe 13
+$> diff -U 3 user_output_test13 test13.output
+
+Diff OK :D
+= Test 14 ==================================================
+$> ./user_exe 14
+$> diff -U 3 user_output_test14 test14.output
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_atoi/user_output_test14	2021-04-28 10:44:47.240000000 +0900$
++++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_atoi/test14.output	2021-04-28 08:51:39.070000000 +0900$
+@@ -1 +1 @@$
+-0$
+\ No newline at end of file$
++469$
+\ No newline at end of file$
+
+Diff KO :(
+= Test 15 ==================================================
+$> ./user_exe 15
+$> diff -U 3 user_output_test15 test15.output
+
+Diff OK :D
+= Test 16 ==================================================
+$> ./user_exe 16
+$> diff -U 3 user_output_test16 test16.output
+
+Diff OK :D
+= Test 17 ==================================================
+$> ./user_exe 17
+$> diff -U 3 user_output_test17 test17.output
+
+Diff OK :D
+= Test 18 ==================================================
+$> ./user_exe 18
+$> diff -U 3 user_output_test18 test18.output
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_atoi/user_output_test18	2021-04-28 10:44:47.330000000 +0900$
++++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part1_functions/ft_atoi/test18.output	2021-04-28 08:51:39.070000000 +0900$
+@@ -1 +1 @@$
+-0$
+\ No newline at end of file$
++-46$
+\ No newline at end of file$
+
+Diff KO :(
+= Test 19 ==================================================
+$> ./user_exe 19
+$> diff -U 3 user_output_test19 test19.output
+
+Diff OK :D
 
 = ft_isalpha.c =================================================================
 $> norminette ft_isalpha.c | grep -E '(Error|Warning)'
@@ -1023,31 +1146,31 @@ $> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_strtrim.c main.c libft.
 /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_strtrim/main.c:38:34: error: too many arguments to function call, expected single argument 's', have 2 arguments
                 if (!(strtrim = ft_strtrim(s1, " ")))
                                 ~~~~~~~~~~     ^~~
-/home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_strtrim/../../../libft.h:68:1: note: 'ft_strtrim' declared here
+/home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_strtrim/../../../libft.h:69:1: note: 'ft_strtrim' declared here
 char                    *ft_strtrim(char const *s);
 ^
 /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_strtrim/main.c:48:34: error: too many arguments to function call, expected single argument 's', have 2 arguments
                 if (!(strtrim = ft_strtrim(s1, "te")))
                                 ~~~~~~~~~~     ^~~~
-/home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_strtrim/../../../libft.h:68:1: note: 'ft_strtrim' declared here
+/home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_strtrim/../../../libft.h:69:1: note: 'ft_strtrim' declared here
 char                    *ft_strtrim(char const *s);
 ^
 /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_strtrim/main.c:58:34: error: too many arguments to function call, expected single argument 's', have 2 arguments
                 if (!(strtrim = ft_strtrim(s1, "l ")))
                                 ~~~~~~~~~~     ^~~~
-/home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_strtrim/../../../libft.h:68:1: note: 'ft_strtrim' declared here
+/home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_strtrim/../../../libft.h:69:1: note: 'ft_strtrim' declared here
 char                    *ft_strtrim(char const *s);
 ^
 /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_strtrim/main.c:68:34: error: too many arguments to function call, expected single argument 's', have 2 arguments
                 if (!(strtrim = ft_strtrim(s1, "tel")))
                                 ~~~~~~~~~~     ^~~~~
-/home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_strtrim/../../../libft.h:68:1: note: 'ft_strtrim' declared here
+/home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_strtrim/../../../libft.h:69:1: note: 'ft_strtrim' declared here
 char                    *ft_strtrim(char const *s);
 ^
 /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_strtrim/main.c:78:34: error: too many arguments to function call, expected single argument 's', have 2 arguments
                 if (!(strtrim = ft_strtrim(s1, " ")))
                                 ~~~~~~~~~~     ^~~
-/home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_strtrim/../../../libft.h:68:1: note: 'ft_strtrim' declared here
+/home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_strtrim/../../../libft.h:69:1: note: 'ft_strtrim' declared here
 char                    *ft_strtrim(char const *s);
 ^
 5 errors generated.
@@ -1065,7 +1188,7 @@ $> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_itoa.c main.c libft.a -
 = Test 1 ===================================================
 $> ./user_exe 01
 $> diff -U 3 user_output_test01 test01.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test01	2021-04-28 09:17:56.200000000 +0900$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test01	2021-04-28 10:44:55.160000000 +0900$
 +++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test01.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +0$
@@ -1075,7 +1198,7 @@ Diff KO :(
 = Test 2 ===================================================
 $> ./user_exe 02
 $> diff -U 3 user_output_test02 test02.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test02	2021-04-28 09:17:56.240000000 +0900$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test02	2021-04-28 10:44:55.200000000 +0900$
 +++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test02.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +9$
@@ -1085,7 +1208,7 @@ Diff KO :(
 = Test 3 ===================================================
 $> ./user_exe 03
 $> diff -U 3 user_output_test03 test03.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test03	2021-04-28 09:17:56.270000000 +0900$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test03	2021-04-28 10:44:55.240000000 +0900$
 +++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test03.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +-9$
@@ -1095,7 +1218,7 @@ Diff KO :(
 = Test 4 ===================================================
 $> ./user_exe 04
 $> diff -U 3 user_output_test04 test04.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test04	2021-04-28 09:17:56.310000000 +0900$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test04	2021-04-28 10:44:55.280000000 +0900$
 +++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test04.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +10$
@@ -1105,7 +1228,7 @@ Diff KO :(
 = Test 5 ===================================================
 $> ./user_exe 05
 $> diff -U 3 user_output_test05 test05.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test05	2021-04-28 09:17:56.350000000 +0900$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test05	2021-04-28 10:44:55.320000000 +0900$
 +++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test05.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +-10$
@@ -1115,7 +1238,7 @@ Diff KO :(
 = Test 6 ===================================================
 $> ./user_exe 06
 $> diff -U 3 user_output_test06 test06.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test06	2021-04-28 09:17:56.380000000 +0900$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test06	2021-04-28 10:44:55.360000000 +0900$
 +++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test06.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +8124$
@@ -1125,7 +1248,7 @@ Diff KO :(
 = Test 7 ===================================================
 $> ./user_exe 07
 $> diff -U 3 user_output_test07 test07.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test07	2021-04-28 09:17:56.420000000 +0900$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test07	2021-04-28 10:44:55.400000000 +0900$
 +++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test07.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +-9874$
@@ -1135,7 +1258,7 @@ Diff KO :(
 = Test 8 ===================================================
 $> ./user_exe 08
 $> diff -U 3 user_output_test08 test08.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test08	2021-04-28 09:17:56.460000000 +0900$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test08	2021-04-28 10:44:55.430000000 +0900$
 +++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test08.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +543000$
@@ -1145,7 +1268,7 @@ Diff KO :(
 = Test 9 ===================================================
 $> ./user_exe 09
 $> diff -U 3 user_output_test09 test09.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test09	2021-04-28 09:17:56.490000000 +0900$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test09	2021-04-28 10:44:55.470000000 +0900$
 +++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test09.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +-2147483648$
@@ -1155,7 +1278,7 @@ Diff KO :(
 = Test 10 ==================================================
 $> ./user_exe 10
 $> diff -U 3 user_output_test10 test10.output
---- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test10	2021-04-28 09:17:56.530000000 +0900$
+--- /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test10	2021-04-28 10:44:55.510000000 +0900$
 +++ /home/jeheon/Desktop/Cardets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test10.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +2147483647$
