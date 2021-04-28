@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 10:03:30 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/26 10:04:59 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/28 16:35:17 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_memdel(void **ap)
 {
-	if (ap)
+	if (!ap)
 		return ;
 	free(*ap);
 	*ap = NULL;

@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 08:01:26 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/26 08:02:43 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/28 19:06:40 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 int		ft_strcmp(char *s1, char *s2)
 {
-	while (*s1 && *s2)
+	unsigned char	*us1;
+	unsigned char	*us2;
+
+	us1 = (unsigned char *)s1;
+	us2 = (unsigned char *)s2;
+	while (*us1 && *us2)
 	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
+		if (*us1 != *us2)
+			return (*us1 - *us2);
+		us1++;
+		us2++;
 	}
-	return (*s1 - *s2);
+	return (*us1 - *us2);
 }

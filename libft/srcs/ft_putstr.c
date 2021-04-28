@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 09:46:29 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 09:48:31 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/28 16:38:20 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putstr(char const *s)
 {
 	while (*s)
-		ft_putchar(*s);
+		ft_putchar(*s++);
 }

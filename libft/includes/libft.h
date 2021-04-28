@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 09:57:58 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/28 10:43:31 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/28 19:45:18 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t			ft_strlen(const char *s);
 char			*ft_strdup(const char *s);
 char			*dest_copy(char *dest, char *src);
+char			*ft_strcpy(char *dest, char *src);
 char			*ft_strncpy(char *dest, char *src, unsigned int n);
 char			*ft_strcat(char *dest, char *src);
 char			*ft_strncat(char *dest, char *src, int n);
@@ -78,10 +79,10 @@ void			ft_putendl(char const *s);
 void			ft_putnbr(int nbr);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
-void			ft_putendl_fd(char const* s, int fd);
+void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
-t_list			*ft_lstnew(void const* content, size_t content_size);
+t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
