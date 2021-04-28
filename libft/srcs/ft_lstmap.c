@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 08:07:41 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/28 08:42:10 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/28 15:20:41 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 
 	pre = ft_lstnew(NULL, 0);
 	if (!lst || pre)
-		return NULL;
+		return (NULL);
 	cur = lst;
 	pre = cur;
 	while (cur)
