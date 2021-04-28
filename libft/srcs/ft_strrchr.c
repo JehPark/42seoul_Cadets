@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/25 09:57:40 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/28 10:35:35 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/28 13:40:54 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 			ret = (char *)s;
 		s++;
 	}
+	if (*s == 0 && c == 0)
+		return (char *)(s);
 	return (ret);
 }
