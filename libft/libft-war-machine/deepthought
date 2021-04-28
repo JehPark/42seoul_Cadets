@@ -3,7 +3,7 @@ $> hostname; uname -msr
 DESKTOP-IAN6FRI
 Linux 4.19.128-microsoft-standard x86_64
 $> date
-Wed Apr 28 14:04:56 KST 2021
+Wed Apr 28 14:08:24 KST 2021
 $> gcc --version
 gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Copyright (C) 2019 Free Software Foundation, Inc.
@@ -92,7 +92,7 @@ $> make bonus
 make: *** No rule to make target 'bonus'.  Stop.
 
 $> ls -la libft.a
--rw-r--r-- 1 jeheon jeheon 101930 Apr 28 14:04 /home/jeheon/Desktop/Cadets/libft/libft-war-machine/dirlibft/libft.a
+-rw-r--r-- 1 jeheon jeheon 101930 Apr 28 14:08 /home/jeheon/Desktop/Cadets/libft/libft-war-machine/dirlibft/libft.a
 
 = Part1_functions ==============================================================
 
@@ -1141,7 +1141,7 @@ $> clang -Wextra -Wall -Werror -g3 -fsanitize=address ft_itoa.c main.c libft.a -
 = Test 1 ===================================================
 $> ./user_exe 01
 $> diff -U 3 user_output_test01 test01.output
---- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test01	2021-04-28 14:05:18.860000000 +0900$
+--- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test01	2021-04-28 14:08:46.570000000 +0900$
 +++ /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test01.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +0$
@@ -1151,7 +1151,7 @@ Diff KO :(
 = Test 2 ===================================================
 $> ./user_exe 02
 $> diff -U 3 user_output_test02 test02.output
---- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test02	2021-04-28 14:05:18.900000000 +0900$
+--- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test02	2021-04-28 14:08:46.610000000 +0900$
 +++ /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test02.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +9$
@@ -1161,7 +1161,7 @@ Diff KO :(
 = Test 3 ===================================================
 $> ./user_exe 03
 $> diff -U 3 user_output_test03 test03.output
---- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test03	2021-04-28 14:05:18.940000000 +0900$
+--- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test03	2021-04-28 14:08:46.650000000 +0900$
 +++ /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test03.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +-9$
@@ -1171,7 +1171,7 @@ Diff KO :(
 = Test 4 ===================================================
 $> ./user_exe 04
 $> diff -U 3 user_output_test04 test04.output
---- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test04	2021-04-28 14:05:18.980000000 +0900$
+--- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test04	2021-04-28 14:08:46.690000000 +0900$
 +++ /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test04.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +10$
@@ -1181,7 +1181,7 @@ Diff KO :(
 = Test 5 ===================================================
 $> ./user_exe 05
 $> diff -U 3 user_output_test05 test05.output
---- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test05	2021-04-28 14:05:19.020000000 +0900$
+--- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test05	2021-04-28 14:08:46.730000000 +0900$
 +++ /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test05.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +-10$
@@ -1191,7 +1191,7 @@ Diff KO :(
 = Test 6 ===================================================
 $> ./user_exe 06
 $> diff -U 3 user_output_test06 test06.output
---- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test06	2021-04-28 14:05:19.060000000 +0900$
+--- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test06	2021-04-28 14:08:46.760000000 +0900$
 +++ /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test06.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +8124$
@@ -1201,7 +1201,7 @@ Diff KO :(
 = Test 7 ===================================================
 $> ./user_exe 07
 $> diff -U 3 user_output_test07 test07.output
---- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test07	2021-04-28 14:05:19.090000000 +0900$
+--- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test07	2021-04-28 14:08:46.800000000 +0900$
 +++ /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test07.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +-9874$
@@ -1211,7 +1211,7 @@ Diff KO :(
 = Test 8 ===================================================
 $> ./user_exe 08
 $> diff -U 3 user_output_test08 test08.output
---- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test08	2021-04-28 14:05:19.130000000 +0900$
+--- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test08	2021-04-28 14:08:46.830000000 +0900$
 +++ /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test08.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +543000$
@@ -1221,7 +1221,7 @@ Diff KO :(
 = Test 9 ===================================================
 $> ./user_exe 09
 $> diff -U 3 user_output_test09 test09.output
---- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test09	2021-04-28 14:05:19.170000000 +0900$
+--- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test09	2021-04-28 14:08:46.870000000 +0900$
 +++ /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test09.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +-2147483648$
@@ -1231,7 +1231,7 @@ Diff KO :(
 = Test 10 ==================================================
 $> ./user_exe 10
 $> diff -U 3 user_output_test10 test10.output
---- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test10	2021-04-28 14:05:19.220000000 +0900$
+--- /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/user_output_test10	2021-04-28 14:08:46.910000000 +0900$
 +++ /home/jeheon/Desktop/Cadets/libft/libft-war-machine/tests/Part2_functions/ft_itoa/test10.output	2021-04-28 08:51:39.080000000 +0900$
 @@ -0,0 +1 @@$
 +2147483647$
