@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 09:53:19 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/29 10:40:54 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/30 07:26:52 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*ret;
 
 	idx = ft_strlen(s);
+	if (start >= (unsigned int)idx)
+		return (ft_strdup(""));
 	while (start)
 	{
 		idx--;
@@ -29,6 +31,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (idx <= (int)len)
 		len = idx;
 	ret = (char *)malloc(sizeof(char) * (len + 1));
+	if (!ret)
+		return (NULL);
 	ft_strscpy(ret, st, st + len);
 	return (ret);
 }
