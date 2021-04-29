@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 09:57:58 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/29 14:57:25 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/29 21:10:15 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int				ft_wordcnt(char const *s, char c);
 void			ft_strscpy(char *word, char *start, const char *end);
 char			*ft_itoa(int n);
 int				ft_intdigit(int n);
-void			ft_putchar(char c);
+void			ft_putchar(int c);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int nbr);

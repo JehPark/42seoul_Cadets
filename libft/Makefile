@@ -24,6 +24,9 @@ $(NAME): $(OBJS)
 bonus: $(OBJS_B)
 	$(AR) $(NAME) $(OBJS_B)
 
+so: $(OBJS)
+	gcc -shared -o libft.so $(OBJS)
+
 clean:
 	rm -rf $(OBJS) $(OBJS_B)
 

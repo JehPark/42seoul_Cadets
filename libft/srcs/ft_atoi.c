@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 08:18:47 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 08:51:02 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/29 20:54:35 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_atoi(const char *str)
 		i++;
 	}
 	nbr = 0;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 		nbr = (str[i++] - '0') + (nbr * 10);
 	return (nbr * sign);
 }
