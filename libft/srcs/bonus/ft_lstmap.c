@@ -1,19 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/28 07:58:13 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/28 08:00:04 by jehpark          ###   ########.fr       */
+/*   Created: 2021/04/29 15:28:42 by jehpark           #+#    #+#             */
+/*   Updated: 2021/04/29 15:50:30 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	new->next = *alst;
-	*alst = new;
+	t_list	*ret;
+	t_list	*prev;
+	t_list	*ans;
+	int		flag;
+
+	ret = ft_lstnew(NULL);
+	flag = 1;
+	while (lst)
+	{
+		prev = ft_lstnew(lst->content);
+		if (flag)
+		{
+			ret->next = prev;
+			flag = 0;
+		}
+		(*f)(prev->content);
+		prev = prev->next;
+		lst = lst->next;
+	}
+	ans = ret->next;
+	ft_lstdelone(ret, del);
+	return (ans);
 }

@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/28 08:04:52 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/28 08:07:32 by jehpark          ###   ########.fr       */
+/*   Created: 2021/04/29 14:33:33 by jehpark           #+#    #+#             */
+/*   Updated: 2021/04/29 14:35:55 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+t_list	*ft_lstnew(void *content)
 {
-	t_list	*cur;
-	t_list	*next;
+	t_list	*ret;
 
-	cur = lst;
-	while (cur)
-	{
-		next = cur->next;
-		(*f)(cur);
-		cur = next;
-	}
+	ret = (t_list *)malloc(sizeof(t_list));
+	ret->content = content;
+	ret->next = NULL;
+	return (ret);
 }

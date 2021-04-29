@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/27 19:03:24 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/28 08:44:34 by jehpark          ###   ########.fr       */
+/*   Created: 2021/04/29 14:38:12 by jehpark           #+#    #+#             */
+/*   Updated: 2021/04/29 14:39:29 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*new;
-
-	if (!(new = (t_list *)malloc(sizeof(t_list))))
-		return (NULL);
-	if (!content)
-	{
-		new->content = NULL;
-		new->content_size = 0;
-	}
-	else
-	{
-		if (!(new->content = (void *)malloc(content_size)))
-			return (NULL);
-		ft_memcpy(new->content, content, content_size);
-		new->content_size = content_size;
-	}
-	new->next = NULL;
-	return (new);
+	new->next = *lst;
+	*lst = new;
 }
