@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 07:40:50 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/29 09:12:20 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/29 09:41:45 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,10 @@ char	*ft_reartrim(char const *s, char const *set)
 		chk[(unsigned char)*set++] = 1;
 	us = (unsigned char *)s;
 	idx = ft_strlen(s) - 1;
-	while (chk[us[idx]])
+	while (idx >= 0 && chk[us[idx]])
 		idx--;
 	rear = (char *)&us[idx];
+	rear++;
 	return (rear);
 }
 
@@ -57,8 +58,14 @@ char	*ft_strtrim(char const *s, char const *set)
 
 	front = ft_fronttrim(s, set);
 	rear = ft_reartrim(s, set);
-	ret = (char *)malloc(rear - front + 2);
-	if (rear > front)
+	if (front > rear)
+	{
+		ret = (char *)malloc(1);
+		ret[0] = '\0';
+		return (ret);
+	}
+	ret = (char *)malloc(rear - front + 1);
+	if (!ret)
 		return (NULL);
 	if (rear == front)
 	{
@@ -66,6 +73,6 @@ char	*ft_strtrim(char const *s, char const *set)
 		ret[1] = '\0';
 		return (ret);
 	}
-	ft_strscpy(ret, front, (char const *)++rear);
+	ft_strscpy(ret, front, (char const *)rear);
 	return (ret);
 }
