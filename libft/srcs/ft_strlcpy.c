@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordcnt.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/27 08:17:45 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 08:29:33 by jehpark          ###   ########.fr       */
+/*   Created: 2021/04/29 07:49:37 by jehpark           #+#    #+#             */
+/*   Updated: 2021/04/29 07:53:26 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_wordcnt(char const *s, char c)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int cnt;
+	unsigned int	idx;
+	unsigned int	len;
 
-	cnt = 0;
-	while (*s)
+	idx = 0;
+	len = (unsigned int)ft_strlen(src);
+	if (size == 0)
+		return (len);
+	while (src[idx] && idx + 1 < size)
 	{
-		if (*s != c)
-		{
-			cnt++;
-			while (*s != c && *s)
-				s++;
-		}
-		else
-			s++;
+		dest[idx] = src[idx];
+		idx++;
 	}
-	return (cnt);
+	if (idx < size)
+		dest[idx] = '\0';
+	return (len);
 }

@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/27 08:12:41 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 10:51:01 by jehpark          ###   ########.fr       */
+/*   Created: 2021/04/29 07:56:08 by jehpark           #+#    #+#             */
+/*   Updated: 2021/04/29 07:58:34 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+void	*ft_calloc(size_t nitems, size_t size)
 {
-	char	**ret;
-	char	*word;
-	char	*start;
-	int		idx;
+	void	*ret;
 
-	idx = 0;
-	ret = (char **)malloc(sizeof(char *) * (ft_wordcnt(s, c) + 1));
-	while (*s)
-	{
-		if (*s != c)
-		{
-			start = (char *)s;
-			while (*s != c)
-				s++;
-			word = (char *)malloc(sizeof(char) * (s - start + 1));
-			ft_strscpy(word, start, s);
-			ret[idx++] = word;
-		}
-		else
-			s++;
-	}
-	ret[idx] = '\0';
+	ret = malloc(nitems * size);
+	ft_bzero(ret, nitems * size);
 	return (ret);
 }

@@ -6,32 +6,66 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 07:40:50 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/27 11:03:24 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/29 09:12:20 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+char	*ft_fronttrim(char const *s, char const *set)
 {
-	char	*rear;
-	char	*front;
-	char	*ret;
-	char	*temp;
+	unsigned char	*front;
+	int				chk[256];
+	int				idx;
 
-	while (*s == ' ' || *s == '\n' || *s == '\t')
-		s++;
-	front = (char *)s;
-	while (*s)
-		s++;
-	s--;
-	while (*s == ' ' || *s == '\n' || *s == '\t')
-		s--;
-	rear = (char *)s;
+	idx = 0;
+	while (idx < 256)
+		chk[idx++] = 0;
+	while (*set)
+		chk[(unsigned char)*set++] = 1;
+	front = (unsigned char *)s;
+	while (chk[*front])
+		front++;
+	return (char *)(front);
+}
+
+char	*ft_reartrim(char const *s, char const *set)
+{
+	int				idx;
+	int				chk[256];
+	unsigned char	*us;
+	char			*rear;
+
+	idx = 0;
+	while (idx < 256)
+		chk[idx++] = 0;
+	while (*set)
+		chk[(unsigned char)*set++] = 1;
+	us = (unsigned char *)s;
+	idx = ft_strlen(s) - 1;
+	while (chk[us[idx]])
+		idx--;
+	rear = (char *)&us[idx];
+	return (rear);
+}
+
+char	*ft_strtrim(char const *s, char const *set)
+{
+	char	*front;
+	char	*rear;
+	char	*ret;
+
+	front = ft_fronttrim(s, set);
+	rear = ft_reartrim(s, set);
 	ret = (char *)malloc(rear - front + 2);
-	temp = ret;
-	while (front != rear + 1)
-		*temp++ = *front++;
-	*temp = '\0';
+	if (rear > front)
+		return (NULL);
+	if (rear == front)
+	{
+		ret[0] = *rear;
+		ret[1] = '\0';
+		return (ret);
+	}
+	ft_strscpy(ret, front, (char const *)++rear);
 	return (ret);
 }

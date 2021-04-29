@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 09:57:58 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/28 19:45:18 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/29 08:13:45 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int				ft_isascii(int c);
 int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+void			*ft_calloc(size_t nitems, size_t size);
 
 void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
@@ -67,8 +69,8 @@ int				ft_strequ(char const *s1, char const *s2);
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
-char			*ft_strtrim(char const *s);
-char			**ft_strsplit(char const *s, char c);
+char			*ft_strtrim(char const *s1, char const *set);
+char			**ft_split(char const *s, char c);
 int				ft_wordcnt(char const *s, char c);
 void			ft_strscpy(char *word, char *start, const char *end);
 char			*ft_itoa(int n);
