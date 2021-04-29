@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/29 14:45:52 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/29 14:51:42 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/29 16:03:45 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*prev;
 
-	if (!lst || !(lst->next))
+	if (!lst)
 		return (lst);
 	while (lst)
 	{

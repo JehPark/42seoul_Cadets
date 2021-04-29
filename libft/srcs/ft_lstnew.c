@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/29 15:10:29 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/29 15:54:09 by jehpark          ###   ########.fr       */
+/*   Created: 2021/04/29 14:33:33 by jehpark           #+#    #+#             */
+/*   Updated: 2021/04/29 14:35:55 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+t_list	*ft_lstnew(void *content)
 {
-	t_list	*next;
+	t_list	*ret;
 
-	while (*lst)
-	{
-		next = (*lst)->next;
-		(*del)((*lst)->content);
-		(*lst)->next = NULL;
-		free(*lst);
-		*lst = next;
-	}
+	ret = (t_list *)malloc(sizeof(t_list));
+	ret->content = content;
+	ret->next = NULL;
+	return (ret);
 }
