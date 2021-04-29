@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 08:12:41 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/30 07:45:40 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/30 08:36:57 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ char			**ft_mal_error(char **ret, int idx)
 char			**ft_split(char const *s, char c)
 {
 	char	**ret;
-	char	*word;
 	char	*start;
 	int		idx;
 
@@ -40,10 +39,9 @@ char			**ft_split(char const *s, char c)
 			start = (char *)s;
 			while (*s != c && *s)
 				s++;
-			if (!(word = (char *)malloc(sizeof(char) * (s - start + 1))))
-				return (ft_mal_error(ret, idx));
-			ft_strscpy(word, start, s);
-			ret[idx++] = word;
+			if (!(ret[idx] = (char *)malloc(sizeof(char) * (s - start + 1))))
+				return (ft_mall_error(ret, idx));
+			ft_strscpy(ret[idx++], start, s);
 		}
 		s++;
 	}
