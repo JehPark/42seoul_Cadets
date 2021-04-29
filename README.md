@@ -11,3 +11,6 @@ I invited my two colleagues to review my codes and share the idea each other by 
 libft was tested by the test war machine from https://github.com/ska42?tab=repositories, I am really appreciate to him.
 My test results is not that great but now I can fix my code and I need to install clang to use the tool.
 New collaborator was added stripy1026, SW-H. New Tester was added https://github.com/jtoty/Libftest
+
+4/29/2021
+I got the newest version of libft.en.pdf. Therefore, I could do proper work for this problem.
