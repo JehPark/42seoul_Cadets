@@ -15,3 +15,7 @@ New collaborator was added stripy1026, SW-H. New Tester was added https://github
 4/29/2021
 I got the newest version of libft.en.pdf. Therefore, I could do proper work for this problem.
 Today I passed whole test from libft test. I decided to use another test tools to improve my codes.
+
+4/30/2021
+I finished two other testerss on libft. I couldn't figure out how to solve two error of ft_split.c about memory leak.
+I consider that it occurs by OS differences or valgrind error or tester error. (I don't have an error on gcc fsanitizer)
