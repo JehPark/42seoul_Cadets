@@ -6,32 +6,54 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 08:12:41 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/30 08:36:57 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/04/30 22:18:17 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			**ft_mal_error(char **ret, int idx)
+int		ft_wordcnt(char const* s, char c)
 {
-	int	i;
+	int cnt;
+
+	cnt = 0;
+	while (*s)
+	{
+		if (*s != c)
+		{
+			cnt++;
+			while (*s != c && *s)
+				s++;
+		}
+		else
+			s++;
+	}
+	return (cnt);
+}
+
+char			**ft_mal_error(char **ret)
+{
+	size_t	i;
 
 	i = 0;
-	while (i < idx)
-		free(ret[i++]);
+	while (ret[i])
+	{
+		free(ret[i]);
+		i++;
+	}
 	free(ret);
 	return (NULL);
 }
 
 char			**ft_split(char const *s, char c)
 {
-	char	**ret;
-	char	*start;
-	int		idx;
+	char			**ret;
+	const char		*start;
+	size_t			idx;
 
 	idx = 0;
-	if (!(ret = (char **)malloc(sizeof(char *) * (ft_wordcnt(s, c) + 1))))
-		return (char **)(NULL);
+	if (!s || !(ret = (char **)malloc(sizeof(char *) * (ft_wordcnt(s, c) + 1))))
+		return (NULL);
 	while (*s)
 	{
 		if (*s != c)
@@ -40,10 +62,11 @@ char			**ft_split(char const *s, char c)
 			while (*s != c && *s)
 				s++;
 			if (!(ret[idx] = (char *)malloc(sizeof(char) * (s - start + 1))))
-				return (ft_mall_error(ret, idx));
-			ft_strscpy(ret[idx++], start, s);
+				return (ft_mal_error(ret));
+			ft_strlcpy(ret[idx++], start, s - start + 1);
 		}
-		s++;
+		else
+			s++;
 	}
 	ret[idx] = '\0';
 	return (ret);
