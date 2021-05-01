@@ -2,4 +2,4 @@
 
 ##Structure of project
 
-![alt text](./resources/blueprint.PNG?raw=true)
+![alt text](./resources/blueprint.png?raw=true)
