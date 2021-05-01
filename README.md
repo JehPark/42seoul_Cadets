@@ -23,4 +23,4 @@ I consider that it occurs by OS differences or valgrind error or tester error. (
 ft_printf is on progress.
 
 5/1/2021
-Basic settings are finished.
+Basic settings are finished. My design is simple. ft_printf function will takes all args and it starts pass it to converts function and it again passes it to switch functions and actual printing will be executed in util functions. I consider this projects all about scalability of functions. Therefore, I am trying to write functions with KISS and DRY.
