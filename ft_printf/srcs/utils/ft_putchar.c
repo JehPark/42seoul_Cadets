@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/30 09:21:30 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/30 09:22:07 by jehpark          ###   ########.fr       */
+/*   Created: 2021/05/01 15:23:17 by jehpark           #+#    #+#             */
+/*   Updated: 2021/05/01 15:24:25 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putchar(char c)
+void	ft_putchar(const char ch)
 {
-	write(1, &c, 1);
+	write(1, &ch, 1);
 }
