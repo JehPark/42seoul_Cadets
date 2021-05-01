@@ -1,5 +1,5 @@
-#ft_printf
+# ft_printf
 
-##Structure of project
+## Structure of project
 
 ![alt text](./resources/blueprint.png?raw=true)
