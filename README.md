@@ -21,3 +21,6 @@ Today I passed whole test from libft test. I decided to use another test tools t
 I finished two other testerss on libft. I couldn't figure out how to solve two error of ft_split.c about memory leak.
 I consider that it occurs by OS differences or valgrind error or tester error. (I don't have an error on gcc fsanitizer)
 ft_printf is on progress.
+
+5/1/2021
+Basic settings are finished.
