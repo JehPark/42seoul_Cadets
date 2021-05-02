@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 08:55:08 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/01 16:15:01 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/02 09:48:10 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		ft_printf(const char *str, ...)
 	int		done;
 
 	va_start(argv, str);
-	done = ft_handle_print(str, argv, 0);
+	done = ft_converts(str, argv, 0);
 	va_end(argv);
 	return (done);
 }
