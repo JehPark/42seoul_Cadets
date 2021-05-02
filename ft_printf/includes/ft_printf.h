@@ -29,6 +29,10 @@ char	*ft_itoa(int nbr);
 char	*ft_uitoa(unsigned int nbr);
 char	*ft_itox(unsigned int nbr);
 char	*ft_itoX(unsigned int nbr);
-char	*ft_address(unsigned int nbr);
+char	*ft_address(unsigned long nbr);
+int		ft_cntdigit(int	nbr);
+int		ft_cntudigit(unsigned int nbr);
+int		ft_cnthexdigit(unsigned int nbr);
+int		ft_cntulhexdigit(unsigned long nbr);
 
 #endif
