@@ -24,3 +24,6 @@ ft_printf is on progress.
 
 5/1/2021
 Basic settings are finished. My design is simple. ft_printf function will takes all args and it starts pass it to convert functions and it will again pass it to switch functions, this will allocate the args to proper util functions, and actual printing will be executed in util functions. I consider this projects all about scalability of functions. Therefore, I am trying to write functions with KISS and DRY.
+
+5/2/2021
+The ft_printf mandatory part was finished and debugging and testing for mandatory part is started.
