@@ -17,23 +17,39 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-int		ft_printf(const char *str, ...);
-int		ft_converts(const char *str, va_list argv, int cnt);
+typedef struct  s_info
+{
+    int     digit;
+    float   precision;
+    int     isplus;
+}               t_info;
 
-int		ft_switchchar(char mk, va_list argv, int cnt);
-int		ft_switchnbr(char mk, va_list argv, int cnt);
-int		ft_switchhex(char mk, va_list argv, int cnt);
+int		  ft_printf(const char *str, ...);
+int		  ft_converts(const char *str, va_list argv, int cnt);
 
-void	ft_putchar(const char ch);
-int		ft_putnstr(const char *str);
-char	*ft_itoa(int nbr);
-char	*ft_uitoa(unsigned int nbr);
-char	*ft_itox(unsigned int nbr);
-char	*ft_itoX(unsigned int nbr);
-char	*ft_address(unsigned long nbr);
-int		ft_cntdigit(int	nbr);
-int		ft_cntudigit(unsigned int nbr);
-int		ft_cnthexdigit(unsigned int nbr);
-int		ft_cntulhexdigit(unsigned long nbr);
+int       ft_bigswitch(t_info *info, char ch, va_list argv);
+int		  ft_switchchar(char mk, va_list argv, t_info *info);
+int		  ft_switchnbr(char mk, va_list argv, t_info *info);
+int		  ft_switchhex(char mk, va_list argv, t_info *info);
+
+void      ft_infoinit(t_info *info);
+t_info    *ft_mkinfo(const char *str, t_info *info);
+
+void	  ft_putchar(const char ch);
+int		  ft_putnstr(const char *str);
+char	  *ft_itoa(int nbr);
+char	  *ft_uitoa(unsigned int nbr);
+char	  *ft_itox(unsigned int nbr);
+char	  *ft_itoX(unsigned int nbr);
+char	  *ft_address(unsigned long nbr);
+int		  ft_cntdigit(int	nbr);
+int		  ft_cntudigit(unsigned int nbr);
+int		  ft_cnthexdigit(unsigned int nbr);
+int		  ft_cntulhexdigit(unsigned long nbr);
+int       ft_isnumanddot(char ch);
+void      ft_strscpy(char *dest, const char *start, char *end);
+float     ft_atof(char *nbr);
+int       ft_atoi(char *nbr);
+int       ft_isflag(char ch);
 
 #endif
