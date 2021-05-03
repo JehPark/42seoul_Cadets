@@ -23,6 +23,9 @@ I finished two other testerss on libft. I couldn't figure out how to solve two e
 I consider that it occurs by OS differences or valgrind error or tester error. (I don't have an error on gcc fsanitizer)
 ft_printf is on progress.
 
+5/4/2021
+I realized that we cannnot use the wildcard in the Makefile. Therefore, I started to modify it.
+
 ## ft_printf
 5/1/2021
 Basic settings are finished. My design is simple. ft_printf function will takes all args and it starts pass it to convert functions and it will again pass it to switch functions, this will allocate the args to proper util functions, and actual printing will be executed in util functions. I consider this projects all about scalability of functions. Therefore, I am trying to write functions with KISS and DRY.
@@ -32,3 +35,6 @@ The ft_printf mandatory part was finished and debugging and testing for mandator
 
 5/3/2021
 Today is my first day in 42seoul as a Cadet but I couldn't visit the cluster. I got my first test result from tester and display it on the repo.
+
+5/4/2021
+My first test results were horrorfic. I started to fix it step by step
