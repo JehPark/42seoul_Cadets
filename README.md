@@ -29,3 +29,6 @@ Basic settings are finished. My design is simple. ft_printf function will takes 
 
 5/2/2021
 The ft_printf mandatory part was finished and debugging and testing for mandatory part is started.
+
+5/3/2021
+Today is my first day in 42seoul as a Cadet but I couldn't visit the cluster. I got my first test result from tester and display it on the repo.
