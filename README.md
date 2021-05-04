@@ -37,4 +37,4 @@ The ft_printf mandatory part was finished and debugging and testing for mandator
 Today is my first day in 42seoul as a Cadet but I couldn't visit the cluster. I got my first test result from tester and display it on the repo.
 
 5/4/2021
-My first test results were horrorfic. I started to fix it step by step
+My first test results were horrorfic. I started to fix it step by step. Basic funtions are fixed. Next one is to solve the width of characters.
