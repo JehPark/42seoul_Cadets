@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:04:26 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/04 13:42:16 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/04 14:21:08 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int		ft_mkinfo(const char *str, t_info *info)
   start = temp;
   while('0' <= *temp && *temp <= '9')
 	  temp++;
-  nbr = (char *)malloc(temp - start + 1);
+  if (!(nbr = (char *)malloc(temp - start + 1)))
+	  return (0);
   ft_strscpy(nbr, start, temp);
   if (flag == 2)
     info->precision = ft_atof(nbr);

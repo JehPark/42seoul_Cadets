@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 15:25:47 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/04 13:19:46 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/04 13:52:41 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_switchchar(char mk, va_list argv, t_info *info)
 	else if (mk == 's')
 	{
 		str = va_arg(argv, char *);
-		cnt = ft_putnstr(str);
+		cnt = ft_putswithsp(str, info->digit);
 	}
 	return (cnt);
 }

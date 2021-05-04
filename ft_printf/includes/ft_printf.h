@@ -54,5 +54,7 @@ int       ft_isflag(const char *str);
 int       ft_isspace(char ch);
 int       ft_putchwiths(char ch, int digit);
 void      ft_printsp(int nbr);
+int       ft_putswithsp(char *str, int digit);
+int       ft_strlen(char *str);
 
 #endif
