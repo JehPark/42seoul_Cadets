@@ -24,7 +24,7 @@ I consider that it occurs by OS differences or valgrind error or tester error. (
 ft_printf is on progress.
 
 5/4/2021
-I realized that we cannnot use the wildcard in the Makefile. Therefore, I started to modify it.
+I realized that we cannnot use the wildcard in the Makefile. Therefore, I started to modify it. I modified it and I choose hard coding style for naming all *.c files and also plus the s options in ar rc because I realize that it is the plus option for exsiting library.
 
 ## ft_printf
 5/1/2021
