@@ -2,7 +2,11 @@
 
 ## Structure of project
 
+### version1
 ![alt text](./resources/blueprint.png?raw=true)
+
+### version2
+![alt text](./resources/blueprint2.png?raw=true)
 
 ## Test Result
 
