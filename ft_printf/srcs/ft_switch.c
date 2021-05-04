@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 15:25:47 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/02 09:47:30 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/04 13:19:46 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_switchchar(char mk, va_list argv, t_info *info)
 	char	*str;
 	int		cnt;
 
-	if (mk == '%' || info->digit)
+	if (mk == '%')
 	{
 		ft_putchar('%');
 		cnt = 1;
@@ -26,8 +26,7 @@ int		ft_switchchar(char mk, va_list argv, t_info *info)
 	else if (mk == 'c')
 	{
 		ch = va_arg(argv, int);
-		ft_putchar(ch);
-		cnt = 1;
+		cnt = ft_putchwiths(ch, info->digit);
 	}
 	else if (mk == 's')
 	{

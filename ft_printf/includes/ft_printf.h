@@ -52,5 +52,7 @@ float     ft_atof(char *nbr);
 int       ft_atoi(char *nbr);
 int       ft_isflag(const char *str);
 int       ft_isspace(char ch);
+int       ft_putchwiths(char ch, int digit);
+void      ft_printsp(int nbr);
 
 #endif

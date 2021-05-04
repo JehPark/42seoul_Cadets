@@ -3,8 +3,8 @@
 
 int		main(void)
 {
-	int nbr = 456;
-	ft_printf("%4.0d", nbr);
-	printf("%4.0d", nbr);
+	char ch = '!';
+	ft_printf("%-3c\n", ch);
+	printf("%-3c", ch);
 	return (0);
 }
