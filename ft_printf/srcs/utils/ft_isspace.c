@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strscpy.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 15:05:39 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/04 09:52:18 by jehpark          ###   ########.fr       */
+/*   Created: 2021/05/04 09:26:47 by jehpark           #+#    #+#             */
+/*   Updated: 2021/05/04 09:28:15 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int    ft_strscpy(char *dest, const char *start, char *end)
+int		ft_isspace(char ch)
 {
-  char *temp;
-
-  temp = (char *)start;
-  while (temp != end)
-    *dest++ = *temp++;
-  *dest = '\0';
-  return (int)(end - start);
+	if (ch == '\f' || ch == '\v' || ch == '\n' ||
+			ch == '\r' || ch == '\t' || ch == ' ')
+		return (1);
+	return (0);
 }

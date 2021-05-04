@@ -33,7 +33,7 @@ int		  ft_switchnbr(char mk, va_list argv, t_info *info);
 int		  ft_switchhex(char mk, va_list argv, t_info *info);
 
 void      ft_infoinit(t_info *info);
-t_info    *ft_mkinfo(const char *str, t_info *info);
+int       ft_mkinfo(const char *str, t_info *info);
 
 void	  ft_putchar(const char ch);
 int		  ft_putnstr(const char *str);
@@ -46,10 +46,11 @@ int		  ft_cntdigit(int	nbr);
 int		  ft_cntudigit(unsigned int nbr);
 int		  ft_cnthexdigit(unsigned int nbr);
 int		  ft_cntulhexdigit(unsigned long nbr);
-int       ft_isnumanddot(char ch);
-void      ft_strscpy(char *dest, const char *start, char *end);
+int       ft_isnum(char ch);
+int       ft_strscpy(char *dest, const char *start, char *end);
 float     ft_atof(char *nbr);
 int       ft_atoi(char *nbr);
-int       ft_isflag(char ch);
+int       ft_isflag(const char *str);
+int       ft_isspace(char ch);
 
 #endif

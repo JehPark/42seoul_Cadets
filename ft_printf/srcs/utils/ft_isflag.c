@@ -6,17 +6,17 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 13:31:20 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/03 13:31:23 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/04 10:02:01 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int   ft_isflag(char ch)
+int   ft_isflag(const char *str)
 {
-  if (ch == '%' || ch == 'c' || ch == 's'
-      || ch == 'i' || ch == 'd' || ch == 'u'
-      || ch == 'p' || ch == 'x' || ch == 'X')
+  if (*str == '%' || *str == 'c' || *str == 's'
+      || *str == 'i' || *str == 'd' || *str == 'u'
+      || *str == 'p' || *str == 'x' || *str == 'X')
       return (1);
 	return (0);
 }
