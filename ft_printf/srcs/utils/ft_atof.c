@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:09:55 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/03 15:19:55 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/04 14:38:09 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,16 @@ float	ft_atof(char *nbr)
 {
 	float	ans;
 	float	div;
+	char	*temp;
 
 	ans = 0.0f;
 	div = 1.0f;
-	while (*nbr != '.')
-	{
-		ans *= 10;
-		ans += *nbr++ - '0';
-	}
-	nbr++;
-	while (*nbr && *nbr >= '0' && *nbr <= '9')
+	temp = nbr;
+	while (*temp && *temp >= '0' && *temp <= '9')
 	{
 		div /= 10.0f;
-		ans += (float)(*nbr++ - '0') * div;
+		ans += (float)(*temp - '0') * div;
+		temp++;
 	}
 	return (ans);
 }
