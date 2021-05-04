@@ -22,6 +22,8 @@ typedef struct  s_info
     int     digit;
     float   precision;
     int     isplus;
+    int     isint;
+    int     isfloat;
 }               t_info;
 
 int		  ft_printf(const char *str, ...);
@@ -34,6 +36,9 @@ int		  ft_switchhex(char mk, va_list argv, t_info *info);
 
 void      ft_infoinit(t_info *info);
 int       ft_mkinfo(const char *str, t_info *info);
+int		  ft_isfloat(char *str, t_info *info);
+int       ft_intinfo(const char *str, t_info *info);
+int       ft_floatinfo(const char *str, t_info *info);
 
 void	  ft_putchar(const char ch);
 int		  ft_putnstr(const char *str);

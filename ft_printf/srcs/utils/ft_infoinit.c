@@ -17,4 +17,6 @@ void    ft_infoinit(t_info *info)
   info->digit = 0;
   info->precision = 0.0f;
   info->isplus = 0;
+  info->isfloat = 0;
+  info->isint = 0;
 }

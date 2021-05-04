@@ -6,33 +6,80 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:04:26 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/04 14:21:08 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/04 16:19:58 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+int		ft_isfloat(char *str, t_info *info)
+{
+	while (ft_isnum(*str))
+	{
+		if (*str == '.')
+		{
+			info->isfloat = 1;
+			return (1);
+		}
+		str++;
+	}
+	info->isint = 1;
+	return (0);
+}
+
+int		ft_intinfo(const char *str, t_info *info)
+{
+	char 	*temp;
+	int		sign;
+	char	*nbr;
+	char	*start;
+
+	sign = 1;
+	temp = (char *)str;
+	if (*temp == '+' || *temp == '-')
+		sign = *temp++ == '-' ? -1 : 1;
+	start = temp;
+	while ('0' <= *temp && *temp <= '9')
+		temp++;
+	if (!(nbr = (char *)malloc(temp - start + 1)))
+		return (0);
+	ft_strscpy(nbr, start, temp);
+	info->digit = ft_atoi(nbr) * sign;
+	free(nbr);
+	return (int)(temp - str);
+}
+
+int		ft_floatinfo(const char *str, t_info *info)
+{
+	char	*temp;
+	int		sign;
+	char	*nbr;
+	char	*start;
+
+	sign = 1;
+	temp = (char *)str;
+	if (*temp == '+' || *temp == '-')
+		sign = *temp++ == '-' ? -1 : 1;
+	start = temp;
+	while (('0' <= *temp && *temp <= '9') || *temp == '.')
+		temp++;
+	if (!(nbr = (char *)malloc(temp - start + 1)))
+		return (0.0f);
+	ft_strscpy(nbr, start, temp);
+	info->precision = ft_atof(nbr) * (float)sign;
+	free(nbr);
+	return (int)(temp - str);
+}
+
 int		ft_mkinfo(const char *str, t_info *info)
 {
-  char  *temp;
-  char  *nbr;
-  int   flag;
-  char	*start;
+	int cnt;
+	char *temp;
 
-  temp = (char *)str;
-  flag = 1;
-  if (*temp == '.' || *temp == '-')
-	  flag = *temp++ == '-' ? -1 : 2;
-  start = temp;
-  while('0' <= *temp && *temp <= '9')
-	  temp++;
-  if (!(nbr = (char *)malloc(temp - start + 1)))
-	  return (0);
-  ft_strscpy(nbr, start, temp);
-  if (flag == 2)
-    info->precision = ft_atof(nbr);
-  else
-    info->digit = ft_atoi(nbr) * flag;
-  free(nbr);
-  return (int)(temp - str);
+	temp = (char *)str;
+	if (ft_isfloat(temp, info))
+		cnt = ft_floatinfo(str, info);
+	else
+		cnt = ft_intinfo(str, info);
+	return (cnt);
 }
