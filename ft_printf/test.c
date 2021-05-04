@@ -4,7 +4,6 @@
 int		main(void)
 {
 	char ch = '!';
-	ft_printf("%-3c\n", ch);
-	printf("%-3c", ch);
+	printf("%7.5s", "bombastic");
 	return (0);
 }
