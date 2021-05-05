@@ -40,4 +40,4 @@ Today is my first day in 42seoul as a Cadet but I couldn't visit the cluster. I 
 My first test results were horrorfic. I started to fix it step by step. Basic funtions are fixed. Next one is to solve the width of characters.
 
 5/5/2021
-I started solve null test case.
+I started to solve null test case.
