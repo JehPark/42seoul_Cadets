@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_infoinit.c                                      :+:      :+:    :+:   */
+/*   ft_treatnull.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 14:26:48 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/05 14:24:20 by jehpark          ###   ########.fr       */
+/*   Created: 2021/05/05 14:24:35 by jehpark           #+#    #+#             */
+/*   Updated: 2021/05/05 14:35:10 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_infoinit(t_info *info)
+void	ft_treatnull(char **str, t_info *info)
 {
-  info->digit = 0;
-  info->precision = 0;
-  info->isplus = 0;
-  info->isfloat = 0;
-  info->isint = 0;
-  info->isnull = 0;
+	info->isnull = 1;
+	if (info->isfloat && info->precision < 6)
+		*str = "";
+	else
+		*str = "(null)";
 }

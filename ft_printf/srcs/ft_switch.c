@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 15:25:47 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/05 09:45:08 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/05 14:23:52 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		ft_switchchar(char mk, va_list argv, t_info *info)
 	{
 		str = va_arg(argv, char *);
 		if (str == NULL)
-			str = "(null)";
+			ft_treatnull(&str, info);
 		cnt = ft_putswithsp(str, info);
 	}
 	return (cnt);
