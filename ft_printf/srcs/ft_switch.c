@@ -6,11 +6,12 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 15:25:47 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/04 13:52:41 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/05 09:25:37 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int		ft_switchchar(char mk, va_list argv, t_info *info)
 {
@@ -31,7 +32,7 @@ int		ft_switchchar(char mk, va_list argv, t_info *info)
 	else if (mk == 's')
 	{
 		str = va_arg(argv, char *);
-		cnt = ft_putswithsp(str, info->digit);
+		cnt = ft_putswithsp(str, info);
 	}
 	return (cnt);
 }

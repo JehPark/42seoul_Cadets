@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:04:26 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/04 16:19:58 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/05 08:30:04 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ int		ft_floatinfo(const char *str, t_info *info)
 	while (('0' <= *temp && *temp <= '9') || *temp == '.')
 		temp++;
 	if (!(nbr = (char *)malloc(temp - start + 1)))
-		return (0.0f);
+		return (0);
 	ft_strscpy(nbr, start, temp);
-	info->precision = ft_atof(nbr) * (float)sign;
+	ft_atof(nbr, sign, info);
 	free(nbr);
 	return (int)(temp - str);
 }

@@ -20,7 +20,7 @@
 typedef struct  s_info
 {
     int     digit;
-    float   precision;
+    int     precision;
     int     isplus;
     int     isint;
     int     isfloat;
@@ -53,13 +53,14 @@ int		  ft_cnthexdigit(unsigned int nbr);
 int		  ft_cntulhexdigit(unsigned long nbr);
 int       ft_isnum(char ch);
 int       ft_strscpy(char *dest, const char *start, char *end);
-float     ft_atof(char *nbr);
+float     ft_atof(char *nbr, int sign, t_info *info);
 int       ft_atoi(char *nbr);
 int       ft_isflag(const char *str);
 int       ft_isspace(char ch);
 int       ft_putchwiths(char ch, int digit);
 void      ft_printsp(int nbr);
-int       ft_putswithsp(char *str, int digit);
+int       ft_putswithsp(char *str, t_info *info);
 int       ft_strlen(char *str);
+int       ft_putlstr(const char *str, int len);
 
 #endif

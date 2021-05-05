@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atof.c                                          :+:      :+:    :+:   */
+/*   ft_putlstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 15:09:55 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/05 09:28:26 by jehpark          ###   ########.fr       */
+/*   Created: 2021/05/05 08:39:16 by jehpark           #+#    #+#             */
+/*   Updated: 2021/05/05 08:58:13 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-float	ft_atof(char *nbr, int sign, t_info *info)
+int		ft_putlstr(const char *str, int len)
 {
-	int		ans;
-	int		div;
+	int 	idx;
 	char	*temp;
 
-	ans = 0;
-	div = 0;
-	temp = nbr;
-	while ('0' <= *temp && *temp <= '9' && *temp != '.')
+	idx = 0;
+	temp = (char *)str;
+	while (idx < len)
 	{
-		ans *= 10;
-		ans += (int)(*temp++ - '0');
+		ft_putchar(*temp++);
+		idx++;
 	}
-	info->digit = ans * sign;
-	temp++;
-	while (*temp && *temp >= '0' && *temp <= '9')
-	{
-		div *= 10;
-		div += (int)(*temp++ - '0');
-	}
-	info->precision = div;
-	return (ans);
+	return (len);
 }
