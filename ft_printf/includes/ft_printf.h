@@ -25,6 +25,8 @@ typedef struct  s_info
     int     isint;
     int     isfloat;
     int     isnull;
+    int     ishex;
+    int     isbig;
 }               t_info;
 
 int		  ft_printf(const char *str, ...);
@@ -64,5 +66,6 @@ int       ft_putswithsp(char *str, t_info *info);
 int       ft_strlen(char *str);
 int       ft_putlstr(const char *str, int len);
 void      ft_treatnull(char **str, t_info *info);
+char      *ft_treatzero(t_info *info);
 
 #endif

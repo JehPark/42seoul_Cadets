@@ -4,6 +4,6 @@
 int		main(void)
 {
 	char ch = '!';
-	printf("%s", "");
+	printf("%p", NULL);
 	return (0);
 }
