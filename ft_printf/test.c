@@ -4,6 +4,6 @@
 int		main(void)
 {
 	char ch = '!';
-	printf("%7.5s", "bombastic");
+	printf("%s", "");
 	return (0);
 }
