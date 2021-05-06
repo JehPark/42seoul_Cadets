@@ -7,68 +7,73 @@ INCDIR = includes
 BDIR = srcs/bonus
 NAME = libft.a
 
-SRCS = $(SRCDIR)/ft_memset.c \
-	$(SRCDIR)/ft_bzero.c \
-	$(SRCDIR)/ft_memcpy.c \
-	$(SRCDIR)/ft_memccpy.c \
-	$(SRCDIR)/ft_memmove.c \
-	$(SRCDIR)/ft_memchr.c \
-	$(SRCDIR)/ft_memcmp.c \
-	$(SRCDIR)/ft_strlen.c \
-	$(SRCDIR)/ft_strlcpy.c \
-	$(SRCDIR)/ft_strlcat.c \
-	$(SRCDIR)/ft_strchr.c \
-	$(SRCDIR)/ft_strrchr.c \
-	$(SRCDIR)/ft_strnstr.c \
-	$(SRCDIR)/ft_strncmp.c \
-	$(SRCDIR)/ft_atoi.c \
-	$(SRCDIR)/ft_isalpha.c \
-	$(SRCDIR)/ft_isdigit.c \
-	$(SRCDIR)/ft_isalnum.c \
-	$(SRCDIR)/ft_isascii.c \
-	$(SRCDIR)/ft_isprint.c \
-	$(SRCDIR)/ft_toupper.c \
-	$(SRCDIR)/ft_tolower.c \
-	$(SRCDIR)/ft_calloc.c \
-	$(SRCDIR)/ft_strdup.c \
-	$(SRCDIR)/ft_substr.c \
-	$(SRCDIR)/ft_strjoin.c \
-	$(SRCDIR)/ft_strtrim.c \
-	$(SRCDIR)/ft_split.c \
-	$(SRCDIR)/ft_itoa.c \
-	$(SRCDIR)/ft_strmapi.c \
-	$(SRCDIR)/ft_putchar_fd.c \
-	$(SRCDIR)/ft_putstr_fd.c \
-	$(SRCDIR)/ft_putendl_fd.c \
-	$(SRCDIR)/ft_putnbr_fd.c \
-	$(SRCDIR)/ft_isspace.c \
-	$(SRCDIR)/ft_strscpy.c \
-	$(SRCDIR)/ft_intdigit.c
+FUNC = ft_memset \
+	ft_bzero \
+	ft_memcpy \
+	ft_memccpy \
+	ft_memmove \
+	ft_memchr \
+	ft_memcmp \
+	ft_strlen \
+	ft_strlcpy \
+	ft_strlcat \
+	ft_strchr \
+	ft_strrchr \
+	ft_strnstr \
+	ft_strncmp \
+	ft_atoi \
+	ft_isalpha \
+	ft_isdigit \
+	ft_isalnum \
+	ft_isascii \
+	ft_isprint \
+	ft_toupper \
+	ft_tolower \
+	ft_calloc \
+	ft_strdup \
+	ft_substr \
+	ft_strjoin \
+	ft_strtrim \
+	ft_split \
+	ft_itoa \
+	ft_strmapi \
+	ft_putchar_fd \
+	ft_putstr_fd \
+	ft_putendl_fd \
+	ft_putnbr_fd \
+	ft_isspace \
+	ft_strscpy \
+	ft_intdigit
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(addprefix objs/, $(addsuffix .o, $(FUNC)))
+SRCS = $(addprefix srcs/, $(addsuffix .c, $(FUNC)))
 
-SRCS_B = $(BDIR)/ft_lstnew.c \
-		 $(BDIR)/ft_lstadd_front.c \
-		 $(BDIR)/ft_lstsize.c \
-		 $(BDIR)/ft_lstlast.c \
-		 $(BDIR)/ft_lstadd_back.c \
-		 $(BDIR)/ft_lstdelone.c \
-		 $(BDIR)/ft_lstclear.c \
-		 $(BDIR)/ft_lstiter.c \
-		 $(BDIR)/ft_lstmap.c
+FUNC_B = ft_lstnew \
+		 ft_lstadd_front \
+		 ft_lstsize \
+		 ft_lstlast \
+		 ft_lstadd_back \
+		 ft_lstdelone \
+		 ft_lstclear \
+		 ft_lstiter \
+		 ft_lstmap
 
-OBJS_B = $(SRCS_B:.c=.o)
+OBJS_B = $(addprefix objs/, $(addsuffix .o, $(FUNC_B)))
+SRCS_B = $(addprefix srcs/bonus/, $(addsuffix .c, $(FUNC_B)))
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $@ $(OBJS)
 
-.c.o: $(SRCS)
-	$(CC) $(CFLAGS) -c -o $@ $< -I $(INCDIR)
+objs/%.o: srcs/%.c
+	$(CC) $(CFLAGS) -I $(INCDIR) -c -o $@ $?
 
 bonus: $(OBJS_B)
 	$(AR) $(NAME) $(OBJS_B)
+
+objs/%.o: srcs/bonus/%.c
+	$(CC) $(CFLAGS) -I $(INCDIR) -c -o $@ $?
 
 so: $(OBJS)
 	gcc -shared -o libft.so $(OBJS)

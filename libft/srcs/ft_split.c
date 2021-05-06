@@ -6,13 +6,13 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 08:12:41 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/30 22:18:17 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/06 12:01:56 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_wordcnt(char const* s, char c)
+int				ft_wordcnt(char const *s, char c)
 {
 	int cnt;
 
@@ -68,6 +68,6 @@ char			**ft_split(char const *s, char c)
 		else
 			s++;
 	}
-	ret[idx] = '\0';
+	ret[idx] = 0;
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 07:40:50 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/29 09:41:45 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/06 12:44:06 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,12 @@ char	*ft_strtrim(char const *s, char const *set)
 	rear = ft_reartrim(s, set);
 	if (front > rear)
 	{
-		ret = (char *)malloc(1);
+		if (!(ret = (char *)malloc(1)))
+			return (NULL);
 		ret[0] = '\0';
 		return (ret);
 	}
-	ret = (char *)malloc(rear - front + 1);
-	if (!ret)
+	if (!(ret = (char *)malloc(rear - front + 1)))
 		return (NULL);
 	if (rear == front)
 	{
