@@ -26,6 +26,9 @@ ft_printf is on progress.
 5/4/2021
 I realized that we cannnot use the wildcard in the Makefile. Therefore, I started to modify it. I modified it and I choose hard coding style for naming all *.c files and also plus the s options in ar rc because I realize that it is the plus option for exsiting library.
 
+5/6/2021
+First try was failed. It was not even compiled. I don't know why it fails.
+
 ## ft_printf
 5/1/2021
 Basic settings are finished. My design is simple. ft_printf function will takes all args and it starts pass it to convert functions and it will again pass it to switch functions, this will allocate the args to proper util functions, and actual printing will be executed in util functions. I consider this projects all about scalability of functions. Therefore, I am trying to write functions with KISS and DRY.
