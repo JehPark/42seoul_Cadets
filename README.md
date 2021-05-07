@@ -29,6 +29,9 @@ I realized that we cannnot use the wildcard in the Makefile. Therefore, I starte
 5/6/2021
 First try was failed. It was not even compiled. I don't know why it fails.
 
+5/7/2021
+It was my fault because there is a comment on the problem pdf that we should put all source files in the same folder with depth 1.
+
 ## ft_printf
 5/1/2021
 Basic settings are finished. My design is simple. ft_printf function will takes all args and it starts pass it to convert functions and it will again pass it to switch functions, this will allocate the args to proper util functions, and actual printing will be executed in util functions. I consider this projects all about scalability of functions. Therefore, I am trying to write functions with KISS and DRY.
