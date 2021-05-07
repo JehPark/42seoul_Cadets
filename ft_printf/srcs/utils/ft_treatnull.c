@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 14:24:35 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/05 14:35:10 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/07 10:24:52 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_treatnull(char **str, t_info *info)
 {
 	info->isnull = 1;
 	if (info->isfloat && info->precision < 6)
-		*str = "";
+		*str = "(null)";
 	else
 		*str = "(null)";
 }

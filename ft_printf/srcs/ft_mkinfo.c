@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:04:26 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/05 08:30:04 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/07 14:06:45 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ int		ft_mkinfo(const char *str, t_info *info)
 	char *temp;
 
 	temp = (char *)str;
+	if (temp[0] == '0')
+		info->iszero = 1;
 	if (ft_isfloat(temp, info))
 		cnt = ft_floatinfo(str, info);
 	else

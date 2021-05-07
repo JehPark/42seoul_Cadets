@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 10:05:00 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/02 09:48:46 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/07 17:50:44 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct  s_info
     int     isnull;
     int     ishex;
     int     isbig;
+	int		iszero;
 }               t_info;
 
 int		  ft_printf(const char *str, ...);
@@ -61,11 +62,19 @@ int       ft_atoi(char *nbr);
 int       ft_isflag(const char *str);
 int       ft_isspace(char ch);
 int       ft_putchwiths(char ch, int digit);
-void      ft_printsp(int nbr);
+int       ft_printsp(int nbr, char sp);
 int       ft_putswithsp(char *str, t_info *info);
 int       ft_strlen(char *str);
 int       ft_putlstr(const char *str, int len);
 void      ft_treatnull(char **str, t_info *info);
 char      *ft_treatzero(t_info *info);
+int       ft_putpercent(t_info *info);
+int		  ft_putdwithsp(char *nbr, t_info *info);
+int		  ft_putdfrontsp(char *nbr, t_info *info);
+int		  ft_putdrearsp(char *nbr, t_info *info);
+int		  ft_putfloatzeros(char *nbr, t_info *info);
+int		  ft_putzeros(char *nbr, t_info *info);
+int		  ft_putzesp(char *nbr, t_info *info);
+int		  ft_putmizesp(char *nbr, t_info *info);
 
 #endif

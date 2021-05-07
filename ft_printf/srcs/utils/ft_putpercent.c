@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_infoinit.c                                      :+:      :+:    :+:   */
+/*   ft_putpercent.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 14:26:48 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/07 10:01:42 by jehpark          ###   ########.fr       */
+/*   Created: 2021/05/07 10:05:33 by jehpark           #+#    #+#             */
+/*   Updated: 2021/05/07 10:15:03 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    ft_infoinit(t_info *info)
+int		ft_putpercent(t_info *info)
 {
-  info->digit = 0;
-  info->precision = 0;
-  info->isplus = 0;
-  info->isfloat = 0;
-  info->isint = 0;
-  info->isnull = 0;
-  info->iszero = 0;
+	char	sp;
+	int		cnt;
+
+	cnt = 0;
+	sp = ' ';
+	if (info->iszero)
+		sp = '0';
+	if (info->digit >= 2)
+	{
+		ft_printsp(info->digit - 1, sp);
+		cnt += info->digit - 1;
+	}
+	ft_putchar('%');
+	cnt++;
+	if (info->digit <= -2)
+	{
+		ft_printsp(-(info->digit + 1), sp);
+		cnt += -(info->digit + 1);
+	}
+	return (cnt);
 }

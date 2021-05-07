@@ -6,17 +6,22 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 13:11:04 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/04 13:12:15 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/07 17:32:20 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_printsp(int nbr)
+int		ft_printsp(int nbr, char sp)
 {
+	int cnt;
+
+	cnt = 0;
 	while (nbr)
 	{
-		write(1, " ", 1);
+		ft_putchar(sp);
 		nbr--;
+		cnt++;
 	}
+	return (cnt);
 }

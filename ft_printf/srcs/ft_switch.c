@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 15:25:47 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/06 15:38:21 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/07 13:57:48 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int		ft_switchchar(char mk, va_list argv, t_info *info)
 	int		cnt;
 
 	cnt = 0;
-	if (mk == 'c' || mk == '%')
+	if (mk == '%')
+		cnt = ft_putpercent(info);
+	if (mk == 'c')
 	{
 		ch = va_arg(argv, int);
 		cnt = ft_putchwiths(ch, info->digit);
@@ -43,11 +45,11 @@ int		ft_switchnbr(char mk, va_list argv, t_info *info)
 	int				cnt;
 
 	cnt = 0;
-	if (mk == 'd' || mk == 'i' || info->digit)
+	if (mk == 'd' || mk == 'i')
 	{
 		d = va_arg(argv, int);
 		nbr = ft_itoa(d);
-		cnt = ft_putnstr(nbr);
+		cnt = ft_putdwithsp(nbr, info);
 	}
 	else if (mk == 'u')
 	{
@@ -76,10 +78,7 @@ int		ft_switchhex(char mk, va_list argv, t_info *info)
 	else if (mk == 'p')
 	{
 		addr = va_arg(argv, unsigned long);
-		if (addr == 0)
-			hex = ft_treatzero(info);
-		else
-			hex = ft_address(addr);
+		hex = ft_address(addr);
 		cnt = ft_putswithsp(hex, info);
 	}
 	return (cnt);
