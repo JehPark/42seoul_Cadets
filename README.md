@@ -32,7 +32,7 @@ First try was failed. It was not even compiled. I don't know why it fails.
 5/7/2021
 It was my fault because there is a comment on the problem pdf that we should put all source files in the same folder with depth 1.
 
-![alt text](./Results/Screen Shot 2021-05-07 at 10.12.38 PM?raw=true)
+![alt text](./Results/LibftResults?raw=true)
 
 ## ft_printf
 5/1/2021
