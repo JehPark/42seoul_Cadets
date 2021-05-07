@@ -66,8 +66,8 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $?
 
-bonus: $(OBJS_B)
-	$(AR) $(NAME) $(OBJS_B)
+bonus: $(OBJS) $(OBJS_B)
+	$(AR) $(NAME) $(OBJS) $(OBJS_B)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $?
