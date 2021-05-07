@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 10:43:19 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/07 17:53:05 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/07 19:46:35 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,11 +99,11 @@ int		ft_putdwithsp(char *nbr, t_info *info)
 		cnt += ft_putdrearsp(nbr, info);
 	else if (info->digit == 0 && info->isfloat)
 		cnt += ft_putfloatzeros(nbr, info);
-	else if (info->digit > 0 && info->iszero)
+	else if (info->digit > 0 && info->iszero && !(info->isfloat))
 		cnt += ft_putzeros(nbr, info);
 	else if (info->digit > 0 && info->isfloat)
 		cnt += ft_putzesp(nbr, info);
-	else if (info->digit < 0 && info->isflaot)
+	else if (info->digit < 0 && info->isfloat)
 		cnt += ft_putmizesp(nbr, info);
 	return (cnt);
 }

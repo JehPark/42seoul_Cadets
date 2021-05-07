@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 17:19:06 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/07 17:53:01 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/07 19:44:22 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,21 @@ int		ft_putzesp(char *nbr, t_info *info)
 int		ft_putmizesp(char *nbr, t_info *info)
 {
 	int cnt;
+	int	len;
+	int	n_space;
 
 	cnt = 0;
 	if (*nbr == '-')
-		ft
+	{
+		ft_putchar(*nbr++);
+		cnt++;
+	}
+	len = ft_strlen(nbr);
+	if (info->precision - len > 0)
+		cnt += ft_printsp(info->precision - len, '0');
+	cnt += ft_putnstr(nbr);
+	n_space = -info->digit;
+	if (n_space - cnt > 0)
+		cnt += ft_printsp(n_space - cnt, ' ');
 	return (cnt);
 }
