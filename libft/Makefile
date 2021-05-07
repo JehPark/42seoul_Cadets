@@ -2,9 +2,6 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 
-SRCDIR = srcs
-INCDIR = includes
-BDIR = srcs/bonus
 NAME = libft.a
 
 FUNC = ft_memset \
@@ -45,8 +42,8 @@ FUNC = ft_memset \
 	ft_strscpy \
 	ft_intdigit
 
-OBJS = $(addprefix objs/, $(addsuffix .o, $(FUNC)))
-SRCS = $(addprefix srcs/, $(addsuffix .c, $(FUNC)))
+OBJS = $(addsuffix .o, $(FUNC))
+SRCS = $(addsuffix .c, $(FUNC))
 
 FUNC_B = ft_lstnew \
 		 ft_lstadd_front \
@@ -58,22 +55,22 @@ FUNC_B = ft_lstnew \
 		 ft_lstiter \
 		 ft_lstmap
 
-OBJS_B = $(addprefix objs/, $(addsuffix .o, $(FUNC_B)))
-SRCS_B = $(addprefix srcs/bonus/, $(addsuffix .c, $(FUNC_B)))
+OBJS_B = $(addsuffix .o, $(FUNC_B))
+SRCS_B = $(addsuffix .c, $(FUNC_B))
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $@ $(OBJS)
 
-objs/%.o: srcs/%.c
-	$(CC) $(CFLAGS) -I $(INCDIR) -c -o $@ $?
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $?
 
 bonus: $(OBJS_B)
 	$(AR) $(NAME) $(OBJS_B)
 
-objs/%.o: srcs/bonus/%.c
-	$(CC) $(CFLAGS) -I $(INCDIR) -c -o $@ $?
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $?
 
 so: $(OBJS)
 	gcc -shared -o libft.so $(OBJS)

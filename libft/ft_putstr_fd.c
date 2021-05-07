@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/29 07:49:37 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/29 07:53:26 by jehpark          ###   ########.fr       */
+/*   Created: 2021/04/27 10:06:32 by jehpark           #+#    #+#             */
+/*   Updated: 2021/05/07 09:38:32 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
+void	ft_putstr_fd(char const *s, int fd)
 {
-	unsigned int	idx;
-	unsigned int	len;
-
-	idx = 0;
-	len = (unsigned int)ft_strlen(src);
-	if (size == 0)
-		return (len);
-	while (src[idx] && idx + 1 < size)
-	{
-		dest[idx] = src[idx];
-		idx++;
-	}
-	if (idx < size)
-		dest[idx] = '\0';
-	return (len);
+	if (!s)
+		return ;
+	while (*s)
+		ft_putchar_fd(*s++, fd);
 }

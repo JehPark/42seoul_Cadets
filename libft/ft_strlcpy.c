@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/29 09:53:19 by jehpark           #+#    #+#             */
-/*   Updated: 2021/04/30 07:26:52 by jehpark          ###   ########.fr       */
+/*   Created: 2021/04/29 07:49:37 by jehpark           #+#    #+#             */
+/*   Updated: 2021/05/07 09:27:50 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 {
-	int		idx;
-	char	*st;
-	char	*ret;
+	unsigned int	idx;
+	unsigned int	len;
 
-	idx = ft_strlen(s);
-	if (start >= (unsigned int)idx)
-		return (ft_strdup(""));
-	while (start)
+	if (!dest || !src)
+		return (0);
+	idx = 0;
+	len = (unsigned int)ft_strlen(src);
+	if (size == 0)
+		return (len);
+	while (src[idx] && idx + 1 < size)
 	{
-		idx--;
-		start--;
-		s++;
+		dest[idx] = src[idx];
+		idx++;
 	}
-	st = (char *)s;
-	if (idx <= (int)len)
-		len = idx;
-	ret = (char *)malloc(sizeof(char) * (len + 1));
-	if (!ret)
-		return (NULL);
-	ft_strscpy(ret, st, st + len);
-	return (ret);
+	if (idx < size)
+		dest[idx] = '\0';
+	return (len);
 }

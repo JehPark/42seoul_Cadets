@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 15:25:47 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/05 15:27:33 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/06 15:38:21 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,8 @@ int		ft_switchchar(char mk, va_list argv, t_info *info)
 	char	*str;
 	int		cnt;
 
-	if (mk == '%')
-	{
-		ft_putchar('%');
-		cnt = 1;
-	}
-	else if (mk == 'c')
+	cnt = 0;
+	if (mk == 'c' || mk == '%')
 	{
 		ch = va_arg(argv, int);
 		cnt = ft_putchwiths(ch, info->digit);
@@ -46,6 +42,7 @@ int		ft_switchnbr(char mk, va_list argv, t_info *info)
 	unsigned int	u;
 	int				cnt;
 
+	cnt = 0;
 	if (mk == 'd' || mk == 'i' || info->digit)
 	{
 		d = va_arg(argv, int);
@@ -69,6 +66,7 @@ int		ft_switchhex(char mk, va_list argv, t_info *info)
 	int cnt;
 	
 	info->ishex = 1;
+	cnt = 0;
 	if (mk == 'x' || mk == 'X')
 	{
 		x = va_arg(argv, unsigned int);
