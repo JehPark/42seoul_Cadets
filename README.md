@@ -55,4 +55,4 @@ I started to solve null test case. All %s cases are cleared. %p is a next step.
 I need to deal with only zero.
 
 5/8/2021
-* is left to deal with.
+\* is left to deal with.
