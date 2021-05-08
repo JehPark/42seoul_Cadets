@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isnum.c                                         :+:      :+:    :+:   */
+/*   ft_isstar.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 15:41:14 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/08 10:15:35 by jehpark          ###   ########.fr       */
+/*   Created: 2021/05/08 10:31:47 by jehpark           #+#    #+#             */
+/*   Updated: 2021/05/08 10:55:16 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_isnum(char ch)
+int		ft_isstar(const char *str)
 {
-	if ((ch >= '0' && ch <= '9') || ch == '.' || ch == '-' || ch == '*')
-		return (1);
+	while (*str && !(ft_isflag(str)))
+	{
+		if (*str == '*')
+			return (1);
+		str++;
+	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:26:48 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/07 10:01:42 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/08 12:04:11 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void    ft_infoinit(t_info *info)
   info->isplus = 0;
   info->isfloat = 0;
   info->isint = 0;
-  info->isnull = 0;
   info->iszero = 0;
+  info->isstar = 0;
+  info->isnull = 0;
+  info->ishex = 0;
 }

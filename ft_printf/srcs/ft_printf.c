@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 08:55:08 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/04 13:05:19 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/08 13:44:55 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ int		ft_converts(const char *str, va_list argv, int cnt)
 		if (*str == '%')
 		{
 			str++;
-			if (ft_isnum(*str))
+			if (ft_isstar(str))
+				str += ft_starinfo(str, &info, argv);
+			else if (ft_isnum(*str))
 				str += ft_mkinfo(str, &info);
 			if (ft_isflag(str))
 			{
@@ -45,10 +47,7 @@ int		ft_converts(const char *str, va_list argv, int cnt)
 			}
 		}
 		else
-		{
-			ft_putchar(*str++);
-			cnt++;
-		}
+			cnt += ft_putchar(*str++);
 	}
 	return (cnt);
 }

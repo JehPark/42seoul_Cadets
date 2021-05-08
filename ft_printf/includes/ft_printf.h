@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 10:05:00 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/08 08:33:36 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/08 13:16:36 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,19 @@ typedef struct  s_info
     int     isplus;
     int     isint;
     int     isfloat;
-    int     isnull;
     int     ishex;
-    int     isbig;
 	int		iszero;
+	int		isstar;
+	int		isnull;
 }               t_info;
+
+typedef struct	s_star
+{
+	int		sign;
+	int		dot;
+	int		n_star;
+	int		iszero;
+}				t_star;
 
 int		  ft_printf(const char *str, ...);
 int		  ft_converts(const char *str, va_list argv, int cnt);
@@ -37,6 +45,7 @@ int       ft_bigswitch(t_info *info, char ch, va_list argv);
 int		  ft_switchchar(char mk, va_list argv, t_info *info);
 int		  ft_switchnbr(char mk, va_list argv, t_info *info);
 int		  ft_switchhex(char mk, va_list argv, t_info *info);
+int		  ft_switchstar(char ch, va_list argv, t_info *info);
 
 void      ft_infoinit(t_info *info);
 int       ft_mkinfo(const char *str, t_info *info);
@@ -44,7 +53,12 @@ int		  ft_isfloat(char *str, t_info *info);
 int       ft_intinfo(const char *str, t_info *info);
 int       ft_floatinfo(const char *str, t_info *info);
 
-void	  ft_putchar(const char ch);
+int		  ft_starinfo(const char *str, t_info *info, va_list argv);
+void	  ft_starinit(t_star *star);
+int		  ft_setstar_i(const char *str, t_star *star);
+void	  ft_setinfost(t_info *info, va_list argv, t_star *star);
+
+int		  ft_putchar(const char ch);
 int		  ft_putnstr(const char *str);
 char	  *ft_itoa(int nbr);
 char	  *ft_uitoa(unsigned int nbr);
@@ -77,5 +91,6 @@ int		  ft_putzeros(char *nbr, t_info *info);
 int		  ft_putzesp(char *nbr, t_info *info);
 int		  ft_putmizesp(char *nbr, t_info *info);
 int		  ft_treatnzero(char *nbr, t_info *info);
+int		  ft_isstar(const char *str);
 
 #endif
