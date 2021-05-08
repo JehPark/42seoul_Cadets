@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 15:25:47 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/07 13:57:48 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/08 09:03:13 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		ft_switchnbr(char mk, va_list argv, t_info *info)
 	{
 		u = va_arg(argv, unsigned int);
 		nbr = ft_uitoa(u);
-		cnt = ft_putnstr(nbr);
+		cnt = ft_putdwithsp(nbr, info);
 	}
 	return (cnt);
 }

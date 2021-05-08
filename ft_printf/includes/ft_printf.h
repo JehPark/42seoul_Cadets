@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 10:05:00 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/07 17:50:44 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/08 08:33:36 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ int		  ft_putfloatzeros(char *nbr, t_info *info);
 int		  ft_putzeros(char *nbr, t_info *info);
 int		  ft_putzesp(char *nbr, t_info *info);
 int		  ft_putmizesp(char *nbr, t_info *info);
+int		  ft_treatnzero(char *nbr, t_info *info);
 
 #endif
