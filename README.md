@@ -50,3 +50,6 @@ My first test results were horrorfic. I started to fix it step by step. Basic fu
 
 5/5/2021
 I started to solve null test case. All %s cases are cleared. %p is a next step.
+
+5/7/2021
+I need to deal with only zero.
