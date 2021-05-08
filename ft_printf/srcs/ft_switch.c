@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 15:25:47 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/08 09:03:13 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/08 09:27:58 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int		ft_switchhex(char mk, va_list argv, t_info *info)
 	{
 		x = va_arg(argv, unsigned int);
 		hex = mk == 'x' ? ft_itox(x) : ft_itoX(x);
-		cnt = ft_putnstr(hex);
+		cnt = ft_putdwithsp(hex, info);
 	}
 	else if (mk == 'p')
 	{
