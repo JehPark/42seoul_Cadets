@@ -57,3 +57,10 @@ ft_printf is on progress.
 
 5/8/2021
 - \* is left to deal with.
+
+5/9/2021
+- There are a lot of issues on differences between mac os and window wsl environment. I post my promblems on the slack of 42seoul, I got reply from one of experienced cadets but there is no definite answer. Therefore, I need to pend this subjects until 5/12/2021. Actually, I finished almost all cases.
+
+## get_next_line
+5/9/2021
+- I started gnl.
