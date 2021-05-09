@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void	ft_starinit(t_star *star)
+void ft_starinit(t_star *star)
 {
 	star->sign = 1;
 	star->dot = 0;
@@ -20,7 +20,7 @@ void	ft_starinit(t_star *star)
 	star->iszero = 0;
 }
 
-int		ft_setstar_i(const char *str, t_star *star)
+int ft_setstar_i(const char *str, t_star *star)
 {
 	int cnt;
 
@@ -41,7 +41,7 @@ int		ft_setstar_i(const char *str, t_star *star)
 	return (cnt);
 }
 
-void	ft_setinfost(t_info *info, va_list argv, t_star *star)
+void ft_setinfost(t_info *info, va_list argv, t_star *star)
 {
 	int digit;
 
@@ -59,7 +59,7 @@ void	ft_setinfost(t_info *info, va_list argv, t_star *star)
 	else if (star->n_star == 2 && star->dot == 1)
 	{
 		digit = va_arg(argv, int);
-		if(star->sign < 0 && digit > 0)
+		if (star->sign < 0 && digit > 0)
 			info->digit = digit * -1;
 		else
 			info->digit = digit;
@@ -67,15 +67,18 @@ void	ft_setinfost(t_info *info, va_list argv, t_star *star)
 	}
 }
 
-int		ft_starinfo(const char *str, t_info *info, va_list argv)
+int ft_starinfo(const char *str, t_info *info, va_list argv)
 {
-	t_star	star_i;
-	int		cnt;
+	t_star star_i;
+	int cnt;
 
 	ft_starinit(&star_i);
 	cnt = ft_setstar_i(str, &star_i);
 	ft_setinfost(info, argv, &star_i);
 	if (star_i.iszero)
 		info->iszero = 1;
+	info->isstar = 1;
+	if (star_i.dot)
+		info->isfloat = 1;
 	return (cnt);
 }

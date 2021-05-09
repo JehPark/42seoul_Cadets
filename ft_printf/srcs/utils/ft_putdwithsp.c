@@ -12,10 +12,10 @@
 
 #include "ft_printf.h"
 
-int		ft_putdfrontsp(char *nbr, t_info *info)
+int ft_putdfrontsp(char *nbr, t_info *info)
 {
 	int cnt;
-	int	len;
+	int len;
 
 	cnt = 0;
 	len = ft_strlen(nbr);
@@ -28,10 +28,10 @@ int		ft_putdfrontsp(char *nbr, t_info *info)
 	return (cnt);
 }
 
-int		ft_putdrearsp(char *nbr, t_info *info)
+int ft_putdrearsp(char *nbr, t_info *info)
 {
 	int cnt;
-	int	len;
+	int len;
 
 	cnt = 0;
 	cnt += ft_putnstr(nbr);
@@ -44,7 +44,7 @@ int		ft_putdrearsp(char *nbr, t_info *info)
 	return (cnt);
 }
 
-int		ft_putfloatzeros(char *nbr, t_info *info)
+int ft_putfloatzeros(char *nbr, t_info *info)
 {
 	int cnt;
 	int len;
@@ -65,10 +65,10 @@ int		ft_putfloatzeros(char *nbr, t_info *info)
 	return (cnt);
 }
 
-int		ft_putzeros(char *nbr, t_info *info)
+int ft_putzeros(char *nbr, t_info *info)
 {
 	int cnt;
-	int	len;
+	int len;
 
 	cnt = 0;
 	if (*nbr == '-')
@@ -86,12 +86,14 @@ int		ft_putzeros(char *nbr, t_info *info)
 	return (cnt);
 }
 
-int		ft_putdwithsp(char *nbr, t_info *info)
+int ft_putdwithsp(char *nbr, t_info *info)
 {
 	int cnt;
 
 	cnt = 0;
-	if (ft_strlen(nbr) == 1 && *nbr == '0' && info->isfloat)
+	if (info->isstar && info->precision != 0)
+		cnt += ft_putswithstar(nbr, info);
+	else if (ft_strlen(nbr) == 1 && *nbr == '0' && info->isfloat)
 		cnt += ft_treatnzero(nbr, info);
 	else if (info->digit == 0 && info->precision == 0)
 		cnt += ft_putnstr(nbr);

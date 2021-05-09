@@ -13,11 +13,11 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-int		ft_switchchar(char mk, va_list argv, t_info *info)
+int ft_switchchar(char mk, va_list argv, t_info *info)
 {
-	char	ch;
-	char	*str;
-	int		cnt;
+	char ch;
+	char *str;
+	int cnt;
 
 	cnt = 0;
 	if (mk == '%')
@@ -32,17 +32,20 @@ int		ft_switchchar(char mk, va_list argv, t_info *info)
 		str = va_arg(argv, char *);
 		if (str == NULL)
 			ft_treatnull(&str, info);
-		cnt = ft_putswithsp(str, info);
+		if (info->isstar)
+			cnt = ft_putswithstar(str, info);
+		else
+			cnt = ft_putswithsp(str, info);
 	}
 	return (cnt);
 }
 
-int		ft_switchnbr(char mk, va_list argv, t_info *info)
+int ft_switchnbr(char mk, va_list argv, t_info *info)
 {
-	char 			*nbr;
-	int				d;
-	unsigned int	u;
-	int				cnt;
+	char *nbr;
+	int d;
+	unsigned int u;
+	int cnt;
 
 	cnt = 0;
 	if (mk == 'd' || mk == 'i')
@@ -60,13 +63,13 @@ int		ft_switchnbr(char mk, va_list argv, t_info *info)
 	return (cnt);
 }
 
-int		ft_switchhex(char mk, va_list argv, t_info *info)
+int ft_switchhex(char mk, va_list argv, t_info *info)
 {
-	unsigned int	x;
-	char			*hex;
-	unsigned long	addr;
+	unsigned int x;
+	char *hex;
+	unsigned long addr;
 	int cnt;
-	
+
 	info->ishex = 1;
 	cnt = 0;
 	if (mk == 'x' || mk == 'X')

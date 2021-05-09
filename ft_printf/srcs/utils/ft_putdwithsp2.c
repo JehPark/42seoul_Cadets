@@ -12,10 +12,10 @@
 
 #include "ft_printf.h"
 
-int		ft_putzesp(char *nbr, t_info *info)
+int ft_putzesp(char *nbr, t_info *info)
 {
 	int cnt;
-	int	len;
+	int len;
 	int prec;
 	int sign;
 
@@ -38,11 +38,11 @@ int		ft_putzesp(char *nbr, t_info *info)
 	return (cnt);
 }
 
-int		ft_putmizesp(char *nbr, t_info *info)
+int ft_putmizesp(char *nbr, t_info *info)
 {
 	int cnt;
-	int	len;
-	int	n_space;
+	int len;
+	int n_space;
 
 	cnt = 0;
 	if (*nbr == '-')
@@ -60,7 +60,7 @@ int		ft_putmizesp(char *nbr, t_info *info)
 	return (cnt);
 }
 
-int		ft_treatnzero(char *nbr, t_info *info)
+int ft_treatnzero(char *nbr, t_info *info)
 {
 	int cnt;
 

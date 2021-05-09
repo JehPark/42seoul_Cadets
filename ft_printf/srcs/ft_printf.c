@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int		ft_bigswitch(t_info *info, char ch, va_list argv)
+int ft_bigswitch(t_info *info, char ch, va_list argv)
 {
 	int cnt;
 
@@ -26,7 +26,7 @@ int		ft_bigswitch(t_info *info, char ch, va_list argv)
 	return (cnt);
 }
 
-int		ft_converts(const char *str, va_list argv, int cnt)
+int ft_converts(const char *str, va_list argv, int cnt)
 {
 	t_info info;
 
@@ -52,10 +52,10 @@ int		ft_converts(const char *str, va_list argv, int cnt)
 	return (cnt);
 }
 
-int		ft_printf(const char *str, ...)
+int ft_printf(const char *str, ...)
 {
-	va_list	argv;
-	int		done;
+	va_list argv;
+	int done;
 
 	va_start(argv, str);
 	done = ft_converts(str, argv, 0);
