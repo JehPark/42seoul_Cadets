@@ -3,6 +3,8 @@
 This is my whole journeys of 42 school in Seoul, South Korea.
 
 ## libft
+### The goal of this project is to deeply understand the basic functions of standard library of c language.
+
 4/25/2021
 
 - Task libft is to make the library of 42 functions. We need to recap the functions in the picines.
@@ -37,6 +39,7 @@ ft_printf is on progress.
 ![alt text](./Results/LibftResults?raw=true)
 
 ## ft_printf
+### The goal of this project is to reproduce printf function. I learned how to deal with exception and structure of project.
 5/1/2021
 - Basic settings are finished. My design is simple. ft_printf function will takes all args and it starts pass it to convert functions and it will again pass it to switch functions, this will allocate the args to proper util functions, and actual printing will be executed in util functions. I consider this projects all about scalability of functions. Therefore, I am trying to write functions with KISS and DRY.
 
@@ -62,5 +65,6 @@ ft_printf is on progress.
 - There are a lot of issues on differences between mac os and window wsl environment. I post my promblems on the slack of 42seoul, I got reply from one of experienced cadets but there is no definite answer. Therefore, I need to pend this subjects until 5/12/2021. Actually, I finished almost all cases.
 
 ## get_next_line
+### The main goal of this project is to understand static variable and buffer.
 5/9/2021
 - I started gnl.
