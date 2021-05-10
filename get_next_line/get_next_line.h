@@ -11,11 +11,21 @@
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#define GET_NEXT_LINE_H
 
 #include <unistd.h>
 #include <stdlib.h>
 
-int		get_next_line(int fd, char **line);
+#define BUFFER_SIZE 8;
+
+typedef struct s_gnl
+{
+    int fd;
+    char *tmp;
+    char *stack;
+    t_gnl *next;
+} t_gnl;
+
+int get_next_line(int fd, char **line);
 
 #endif
