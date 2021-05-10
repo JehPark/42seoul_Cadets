@@ -68,3 +68,6 @@ ft_printf is on progress.
 ### The main goal of this project is to understand static variable and buffer.
 5/9/2021
 - I started gnl.
+
+5/10/2021
+Basic structure was completed and I read whole 42 seoul slacks about gnl and I decides to use linked list to save fd structures.
