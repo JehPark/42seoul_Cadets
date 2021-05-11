@@ -18,8 +18,8 @@ int ft_findnextline(char **stack, char **line)
 	int idx;
 
 	idx = -1;
-	while (*stack[++idx] != '\n')
-		if (*stack[idx])
+	while ((*stack)[++idx] != '\n')
+		if (!(*stack)[idx])
 			return (-1);
 	(*stack)[idx] = '\0';
 	*line = ft_strdup(*stack);
