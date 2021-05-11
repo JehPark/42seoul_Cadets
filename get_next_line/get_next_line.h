@@ -27,5 +27,10 @@ typedef struct s_gnl
 } t_gnl;
 
 int get_next_line(int fd, char **line);
+int ft_findnextline(t_gnl *info, char **line);
+int ft_readfile(t_gnl *info, char **line);
+int ft_strlen(char *str);
+char *ft_strdup(char *str);
+char *ft_strjoin(char *s1, char *s2);
 
 #endif

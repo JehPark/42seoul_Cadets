@@ -12,27 +12,13 @@
 
 #include "get_next_line.h"
 
-char *ft_strdup(char *str)
-{
-	int len;
-	char *ret;
-	char *tmp;
-
-	len = ft_strlen(str);
-	if (!(ret = (char *)malloc(len + 1)))
-		return (NULL);
-	tmp = ret;
-	while (*str)
-		*tmp++ = *str++;
-	*tmp = '\0';
-	return (ret);
-}
-
 int ft_findnextline(t_gnl *info, char **line)
 {
 	char *tmp;
+	char *stack;
 
 	tmp = info->stack;
+	stack = info->stack;
 	while (*tmp && *tmp != '\n')
 		tmp++;
 	if (*tmp == '\n')
@@ -40,7 +26,8 @@ int ft_findnextline(t_gnl *info, char **line)
 		*tmp = '\0';
 		*line = ft_strdup(str);
 		info->stack = ft_strdup(tmp + 1);
-		free(str);
+		free(stack);
+		stack = NULL;
 		return (1);
 	}
 	return (0);
@@ -48,12 +35,34 @@ int ft_findnextline(t_gnl *info, char **line)
 
 int ft_readfile(t_gnl *info, char **line)
 {
+	char *temp;
+	char *stack;
+	int ret;
+
+	temp = info->tmp;
+	while ((ret = read(info->fd, temp, BUFFER_SIZE)) > 0)
+	{
+		temp[ret] = '\0';
+		if (*(info->stack))
+		{
+			stack = info->stack;
+			info->stack = ft_strjoin(stack, temp);
+			free(stack);
+			stack = NULL;
+		}
+		else
+			info->stack = ft_strdup(temp);
+		if (ft_findnextline(info, line))
+			break;
+	}
+	return (ret > 0 ? 1 : ret);
 }
 
 int get_next_line(int fd, char **line)
 {
 	static t_gnl *files;
-	t_gnl cur;
+	t_gnl *cur;
+	int ret;
 
 	cur = files;
 	while (cur && cur->fd != fd)
@@ -62,5 +71,14 @@ int get_next_line(int fd, char **line)
 		return (-1);
 	if (cur->stack != NULL && ft_findnextline(cur, line))
 		return (1);
-	ft_readfile(cur, line);
+	ret = ft_readfile(cur, line);
+	free(cur->tmp);
+	if (ret == 0 && *line != NULL)
+		*line = NULL;
+	if (ret == 0 && cur->stack)
+	{
+		*line = cur->stack;
+		cur->stack = NULL;
+	}
+	return (ret);
 }
