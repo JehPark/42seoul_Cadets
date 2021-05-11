@@ -16,14 +16,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-#define BUFFER_SIZE 8;
-
 typedef struct s_gnl
 {
     int fd;
     char *tmp;
     char *stack;
-    t_gnl *next;
+    struct s_gnl *next;
 } t_gnl;
 
 int get_next_line(int fd, char **line);

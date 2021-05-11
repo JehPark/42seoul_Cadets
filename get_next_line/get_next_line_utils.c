@@ -32,7 +32,7 @@ char *ft_strdup(char *str)
     char *tmp;
 
     len = ft_strlen(str);
-    if (!(ret = (char *)malloc(len + 1)))
+    if (!str || !(ret = (char *)malloc(len + 1)))
         return (NULL);
     tmp = ret;
     while (*str)
@@ -46,7 +46,7 @@ char *ft_strjoin(char *s1, char *s2)
     char *ret;
     char *temp;
 
-    if (!s1 && !s2 || !(ret = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+    if ((!s1 && !s2) || !(ret = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
         return (NULL);
     temp = ret;
     while (*s1)
