@@ -16,17 +16,19 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-typedef struct s_gnl
-{
-    int fd;
-    char *tmp;
-    char *stack;
-    struct s_gnl *next;
-} t_gnl;
+#ifndef BUFFER_SIZE
+#define BUFFER_SIZE 4096
+#endif
+
+#ifndef MAX_FD
+#define MAX_FD 4096;
+#endif
+
+#define RET_VAL(ret) ret > 0 ? 1 : ret;
 
 int get_next_line(int fd, char **line);
-int ft_findnextline(t_gnl *info, char **line);
-int ft_readfile(t_gnl *info, char **line);
+int ft_findnextline(char **stack, char **line);
+int ft_readfile(int fd, char **stack, char *heap, char **line);
 int ft_strlen(char *str);
 char *ft_strdup(char *str);
 char *ft_strjoin(char *s1, char *s2);

@@ -22,7 +22,7 @@ int ft_strlen(char *str)
         str++;
         len++;
     }
-    return len;
+    return (len);
 }
 
 char *ft_strdup(char *str)
@@ -32,10 +32,10 @@ char *ft_strdup(char *str)
     char *tmp;
 
     len = ft_strlen(str);
-    if (!str || !(ret = (char *)malloc(len + 1)))
+    if (!(ret = (char *)malloc(len + 1)))
         return (NULL);
     tmp = ret;
-    while (*str)
+    while (*tmp)
         *tmp++ = *str++;
     *tmp = '\0';
     return (ret);
@@ -44,15 +44,22 @@ char *ft_strdup(char *str)
 char *ft_strjoin(char *s1, char *s2)
 {
     char *ret;
-    char *temp;
+    char *tmp;
+    int len1;
+    int len2;
 
-    if ((!s1 && !s2) || !(ret = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+    len1 = ft_strlen(s1);
+    len2 = ft_strlen(s2);
+    if (!s1 && !s2)
         return (NULL);
-    temp = ret;
+    if (!s1 || !s2)
+        return s1 == NULL ? ft_strdup(s2) : ft_strdup(s1);
+    if (ret = (char *)malloc(len1 + len2 + 1))
+        return (NULL);
+    tmp = ret;
     while (*s1)
-        *temp++ = *s1++;
+        *tmp++ = *s1++;
     while (*s2)
-        *temp++ = *s2++;
-    *temp = '\0';
+        *tmp++ = *s2++;
     return (ret);
 }

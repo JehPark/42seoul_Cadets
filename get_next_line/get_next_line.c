@@ -12,75 +12,65 @@
 
 #include "get_next_line.h"
 
-int ft_findnextline(t_gnl *info, char **line)
+int ft_findnextline(char **stack, char **line)
 {
 	char *tmp;
-	char *stack;
+	char *tofree;
 
-	tmp = info->stack;
-	stack = info->stack;
+	tmp = *stack;
+	tofree = *stack;
 	while (*tmp && *tmp != '\n')
 		tmp++;
-	if (*tmp == '\n')
-	{
-		*tmp = '\0';
-		*line = ft_strdup(stack);
-		info->stack = ft_strdup(tmp + 1);
-		free(stack);
-		stack = NULL;
-		return (1);
-	}
-	return (0);
+	if (!*tmp)
+		return (0);
+	*tmp = '\0';
+	*line = ft_strdup(stack);
+	*stack = ft_strdup(tmp + 1);
+	free(tofree);
+	tofree = NULL;
+	return (1);
 }
 
-int ft_readfile(t_gnl *info, char **line)
+int ft_readfile(int fd, char **stack, char *heap, char **line)
 {
-	char *temp;
-	char *stack;
 	int ret;
+	char *tmp;
 
-	temp = info->tmp;
-	while ((ret = read(info->fd, temp, BUFFER_SIZE)) > 0)
+	while ((ret = read(fd, heap, BUFFER_SIZE) > 0)
 	{
-		temp[ret] = '\0';
-		if (*(info->stack))
+		heap[ret] = '\0';
+		if (*stack)
 		{
-			stack = info->stack;
-			info->stack = ft_strjoin(stack, temp);
-			free(stack);
-			stack = NULL;
+			tmp = *stack;
+			*stack = ft_strjoin(tmp, heap);
+			free(tmp);
+			tmp = NULL;
 		}
 		else
-			info->stack = ft_strdup(temp);
-		if (ft_findnextline(info, line))
+			*stack = ft_strdup(heap);
+		if (ft_findnextline(stack, line))
 			break;
 	}
-	return (ret > 0 ? 1 : ret);
+	return (RET_VAL(ret));
 }
 
 int get_next_line(int fd, char **line)
 {
-	static t_gnl *files;
-	t_gnl *cur;
+	char *openfiles[MAX_FD];
+	char *heap;
 	int ret;
 
-	cur = files;
-	while (cur && cur->fd != fd)
-		cur = cur->next;
-	cur->fd = fd;
-	if (!line || !(cur = (t_gnl *)malloc(sizeof(t_gnl))) || !(cur->tmp = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1)) || read(fd, cur->tmp, 0) < 0)
+	if (!line || fd < 0 || fd >= MAX_FD || BUFFER_SIZE < 1 || !(heap = (char *)malloc(BUFFER_SIZE + 1)))
 		return (-1);
-	if (cur->stack != NULL && ft_findnextline(cur, line))
-		return (1);
-	ret = ft_readfile(cur, line);
-	free(cur->tmp);
-	if (ret != 0 || cur->stack == NULL || (cur->stack)[0] == '\0')
-	{
-		if (!ret && *line)
-			*line = NULL;
-		return (ret);
-	}
-	*line = cur->stack;
-	cur->stack = NULL;
+	if (openfiles[fd] != NULL)
+		if (ft_findnextline(&openfiles[fd], line))
+		{
+			free(heap);
+			return (1);
+		}
+	ret = ft_readfile(fd, &openfiles[fd], heap, line);
+	free(heap);
+	if (ret <= 0)
+		openfiles[fd] = NULL;
 	return (ret);
 }
