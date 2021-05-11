@@ -30,5 +30,6 @@ int ft_exception_line(char **stack, char **line, ssize_t size);
 int ft_strlen(char *str);
 char *ft_strdup(char *str);
 char *ft_strjoin(char *s1, char *s2);
+int ft_strlcpy(char *dest, char *src, int size);
 
 #endif

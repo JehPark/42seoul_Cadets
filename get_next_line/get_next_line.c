@@ -18,18 +18,19 @@ int ft_findnextline(char **stack, char **line)
 	int idx;
 
 	idx = -1;
-	while ((*stack)[++idx] != '\n')
-		if (!(*stack)[idx])
+	tmp = *stack;
+	while (tmp[++idx] != '\n')
+		if (!tmp[idx])
 			return (-1);
-	(*stack)[idx] = '\0';
+	tmp[idx] = '\0';
 	*line = ft_strdup(*stack);
-	if (!(ft_strlen(*stack + idx + 1)))
+	if (!(ft_strlen(&tmp[idx + 1])))
 	{
 		free(*stack);
 		*stack = NULL;
 		return (1);
 	}
-	tmp = ft_strdup(*stack + idx + 1);
+	tmp = ft_strdup(&tmp[idx + 1]);
 	free(*stack);
 	*stack = tmp;
 	return (1);
