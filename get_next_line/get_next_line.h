@@ -21,14 +21,14 @@
 #endif
 
 #ifndef MAX_FD
-#define MAX_FD 4096;
+#define MAX_FD 4096
 #endif
 
-#define RET_VAL(ret) ret > 0 ? 1 : ret;
+#define RET_VAL(ret) ret > 0 ? 1 : ret
 
 int get_next_line(int fd, char **line);
 int ft_findnextline(char **stack, char **line);
-int ft_readfile(int fd, char **stack, char *heap, char **line);
+int ft_exception_line(char **stack, char **line, int size);
 int ft_strlen(char *str);
 char *ft_strdup(char *str);
 char *ft_strjoin(char *s1, char *s2);

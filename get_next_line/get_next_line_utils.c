@@ -41,25 +41,43 @@ char *ft_strdup(char *str)
     return (ret);
 }
 
+unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
+{
+    unsigned int idx;
+    unsigned int len;
+
+    if (!dest || !src)
+        return (0);
+    idx = 0;
+    len = (unsigned int)ft_strlen(src);
+    if (size == 0)
+        return (len);
+    while (src[idx] && idx + 1 < size)
+    {
+        dest[idx] = src[idx];
+        idx++;
+    }
+    if (idx < size)
+        dest[idx] = '\0';
+    return (len);
+}
+
 char *ft_strjoin(char *s1, char *s2)
 {
     char *ret;
-    char *tmp;
     int len1;
     int len2;
 
-    len1 = ft_strlen(s1);
-    len2 = ft_strlen(s2);
     if (!s1 && !s2)
         return (NULL);
     if (!s1 || !s2)
-        return s1 == NULL ? ft_strdup(s2) : ft_strdup(s1);
-    if (ret = (char *)malloc(len1 + len2 + 1))
+        return (!s1 ? ft_strdup(s2) : s1);
+    len1 = ft_strlen(s1);
+    len2 = ft_strlen(s2);
+    if (!(ret = (char *)malloc(len1 + len2 + 1)))
         return (NULL);
-    tmp = ret;
-    while (*s1)
-        *tmp++ = *s1++;
-    while (*s2)
-        *tmp++ = *s2++;
+    ft_strlcpy(ret, s1, len1 + 1);
+    ft_strlcpy(ret + len1, s2, len2 + 1);
+    free(s1);
     return (ret);
 }

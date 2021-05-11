@@ -15,62 +15,62 @@
 int ft_findnextline(char **stack, char **line)
 {
 	char *tmp;
-	char *tofree;
+	int idx;
 
-	tmp = *stack;
-	tofree = *stack;
-	while (*tmp && *tmp != '\n')
-		tmp++;
-	if (!*tmp)
-		return (0);
-	*tmp = '\0';
-	*line = ft_strdup(stack);
-	*stack = ft_strdup(tmp + 1);
-	free(tofree);
-	tofree = NULL;
+	idx = -1;
+	while (*stack[++idx] != '\n')
+		if (*stack[idx])
+			return (-1);
+	(*stack)[idx] = '\0';
+	*line = ft_strdup(*stack);
+	if (!(ft_strlen(*stack + idx + 1)))
+	{
+		free(*stack);
+		*stack = NULL;
+		return (1);
+	}
+	tmp = ft_strdup(*stack + idx + 1);
+	free(*stack);
+	*stack = tmp;
 	return (1);
 }
 
-int ft_readfile(int fd, char **stack, char *heap, char **line)
+int ft_exception_line(char **stack, char **line, int size)
 {
-	int ret;
-	char *tmp;
-
-	while ((ret = read(fd, heap, BUFFER_SIZE) > 0)
+	if (size < 0)
+		return (-1);
+	if (*stack && ft_findnextline(stack, line) > 0)
+		return (1);
+	else if (*stack)
 	{
-		heap[ret] = '\0';
-		if (*stack)
-		{
-			tmp = *stack;
-			*stack = ft_strjoin(tmp, heap);
-			free(tmp);
-			tmp = NULL;
-		}
-		else
-			*stack = ft_strdup(heap);
-		if (ft_findnextline(stack, line))
-			break;
+		*line = *stack;
+		*stack = NULL;
+		return (0);
 	}
-	return (RET_VAL(ret));
+	*line = ft_strdup("");
+	return (0);
 }
 
 int get_next_line(int fd, char **line)
 {
-	char *openfiles[MAX_FD];
+	static char *openfiles[MAX_FD + 3];
 	char *heap;
-	int ret;
+	int size;
 
 	if (!line || fd < 0 || fd >= MAX_FD || BUFFER_SIZE < 1 || !(heap = (char *)malloc(BUFFER_SIZE + 1)))
 		return (-1);
-	if (openfiles[fd] != NULL)
-		if (ft_findnextline(&openfiles[fd], line))
+	while ((size = read(fd, heap, BUFFER_SIZE)) > 0)
+	{
+		heap[size] = '\0';
+		openfiles[fd] = ft_strjoin(openfiles[fd], heap);
+		if ((ft_findnextline(&openfiles[fd], line)) > 0)
 		{
 			free(heap);
+			heap = NULL;
 			return (1);
 		}
-	ret = ft_readfile(fd, &openfiles[fd], heap, line);
+	}
 	free(heap);
-	if (ret <= 0)
-		openfiles[fd] = NULL;
-	return (ret);
+	heap = NULL;
+	return (ft_exception_line(&openfiles[fd], line, size));
 }
