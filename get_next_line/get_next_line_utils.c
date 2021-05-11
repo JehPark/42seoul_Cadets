@@ -35,7 +35,7 @@ char *ft_strdup(char *str)
     if (!(ret = (char *)malloc(len + 1)))
         return (NULL);
     tmp = ret;
-    while (*tmp)
+    while (*str)
         *tmp++ = *str++;
     *tmp = '\0';
     return (ret);

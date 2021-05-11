@@ -35,7 +35,7 @@ int ft_findnextline(char **stack, char **line)
 	return (1);
 }
 
-int ft_exception_line(char **stack, char **line, int size)
+int ft_exception_line(char **stack, char **line, ssize_t size)
 {
 	if (size < 0)
 		return (-1);
@@ -55,7 +55,7 @@ int get_next_line(int fd, char **line)
 {
 	static char *openfiles[MAX_FD + 3];
 	char *heap;
-	int size;
+	ssize_t size;
 
 	if (!line || fd < 0 || fd >= MAX_FD || BUFFER_SIZE < 1 || !(heap = (char *)malloc(BUFFER_SIZE + 1)))
 		return (-1);
