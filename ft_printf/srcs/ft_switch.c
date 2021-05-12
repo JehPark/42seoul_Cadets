@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 15:25:47 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/08 09:27:58 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 20:11:47 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,24 @@ int ft_switchhex(char mk, va_list argv, t_info *info)
 	{
 		addr = va_arg(argv, unsigned long);
 		hex = ft_address(addr);
-		cnt = ft_putswithsp(hex, info);
+		cnt = ft_putdwithsp(hex, info);
+	}
+	return (cnt);
+}
+
+int		ft_switchoctal(char ch, va_list argv, t_info *info)
+{
+	unsigned int 	x;
+	char			*octa;
+	int				cnt;
+
+	cnt = 0;
+	info->ishex = 1;
+	if (ch == 'o')
+	{
+		x = va_arg(argv, unsigned long);
+		octa = ft_itooc(x);
+		cnt = ft_putdwithsp(octa, info);
 	}
 	return (cnt);
 }

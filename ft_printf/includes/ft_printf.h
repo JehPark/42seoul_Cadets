@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 10:05:00 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/08 13:16:36 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 20:59:08 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct s_info
 	int iszero;
 	int isstar;
 	int isnull;
+	int	special;
+	int isspace;
 } t_info;
 
 typedef struct s_star
@@ -36,6 +38,8 @@ typedef struct s_star
 	int dot;
 	int n_star;
 	int iszero;
+	int innbr;
+	int	isspace;
 } t_star;
 
 int ft_printf(const char *str, ...);
@@ -46,6 +50,7 @@ int ft_switchchar(char mk, va_list argv, t_info *info);
 int ft_switchnbr(char mk, va_list argv, t_info *info);
 int ft_switchhex(char mk, va_list argv, t_info *info);
 int ft_switchstar(char ch, va_list argv, t_info *info);
+int	ft_switchoctal(char ch, va_list argv, t_info *info);
 
 void ft_infoinit(t_info *info);
 int ft_mkinfo(const char *str, t_info *info);
@@ -65,6 +70,7 @@ char *ft_uitoa(unsigned int nbr);
 char *ft_itox(unsigned int nbr);
 char *ft_itoX(unsigned int nbr);
 char *ft_address(unsigned long nbr);
+char *ft_itooc(unsigned int nbr);
 int ft_cntdigit(int nbr);
 int ft_cntudigit(unsigned int nbr);
 int ft_cnthexdigit(unsigned int nbr);
@@ -84,6 +90,7 @@ void ft_treatnull(char **str, t_info *info);
 char *ft_treatzero(t_info *info);
 int ft_putpercent(t_info *info);
 int ft_putdwithsp(char *nbr, t_info *info);
+int	ft_putdwithsp2(char *nbr, t_info *info);
 int ft_putdfrontsp(char *nbr, t_info *info);
 int ft_putdrearsp(char *nbr, t_info *info);
 int ft_putfloatzeros(char *nbr, t_info *info);

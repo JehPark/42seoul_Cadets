@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 08:55:08 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/08 13:44:55 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 18:58:26 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int ft_bigswitch(t_info *info, char ch, va_list argv)
 		cnt += ft_switchnbr(ch, argv, info);
 	else if (ch == 'p' || ch == 'x' || ch == 'X')
 		cnt += ft_switchhex(ch, argv, info);
+	else if (ch == 'o')
+		cnt += ft_switchoctal(ch, argv, info);
 	return (cnt);
 }
 

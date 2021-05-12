@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 13:53:06 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/07 10:15:43 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 16:51:36 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int ft_putswithstar(char *str, t_info *info)
 	digit = info->digit;
 	prec = info->precision;
 	if (info->isfloat)
-		len = prec > ft_strlen(str) ? ft_strlen(str) : prec;
+		len = prec < 0 ? ft_strlen(str) : prec;
 	if (digit - len > 0)
 	{
 		ft_printsp(digit - len, ' ');

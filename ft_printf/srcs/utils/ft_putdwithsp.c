@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 10:43:19 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/08 08:38:39 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 21:01:43 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,13 @@ int ft_putdwithsp(char *nbr, t_info *info)
 	int cnt;
 
 	cnt = 0;
-	if (info->isstar && info->precision != 0)
+	if (info->isspace)
+		cnt += ft_printsp(info->isspace, ' ');
+	if (info->special && info->digit > 0 && info->isfloat)
+		cnt += ft_putzesp(nbr, info);
+	else if (info->isstar && info->precision != 0 && info->digit == 0)
+		cnt += ft_putfloatzeros(nbr, info);
+	else if (info->isstar && info->precision != 0)
 		cnt += ft_putswithstar(nbr, info);
 	else if (ft_strlen(nbr) == 1 && *nbr == '0' && info->isfloat)
 		cnt += ft_treatnzero(nbr, info);
@@ -99,15 +105,7 @@ int ft_putdwithsp(char *nbr, t_info *info)
 		cnt += ft_putnstr(nbr);
 	else if (!(info->iszero) && info->digit > 0 && info->isfloat == 0)
 		cnt += ft_putdfrontsp(nbr, info);
-	else if (info->digit < 0 && info->isfloat == 0)
-		cnt += ft_putdrearsp(nbr, info);
-	else if (info->digit == 0 && info->isfloat)
-		cnt += ft_putfloatzeros(nbr, info);
-	else if (info->digit > 0 && info->iszero && !(info->isfloat))
-		cnt += ft_putzeros(nbr, info);
-	else if (info->digit > 0 && info->isfloat)
-		cnt += ft_putzesp(nbr, info);
-	else if (info->digit < 0 && info->isfloat)
-		cnt += ft_putmizesp(nbr, info);
+	else
+		cnt += ft_putdwithsp2(nbr, info);
 	return (cnt);
 }
