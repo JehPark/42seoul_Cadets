@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:04:26 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/07 22:50:21 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 22:15:42 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_isfloat(char *str, t_info *info)
 
 int		ft_intinfo(const char *str, t_info *info)
 {
-	char 	*temp;
+	char	*temp;
 	int		sign;
 	char	*nbr;
 	char	*start;
@@ -73,8 +73,8 @@ int		ft_floatinfo(const char *str, t_info *info)
 
 int		ft_mkinfo(const char *str, t_info *info)
 {
-	int 	cnt;
-	char 	*temp;
+	int		cnt;
+	char	*temp;
 	int		sign;
 
 	sign = 0;

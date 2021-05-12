@@ -6,13 +6,13 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 17:19:06 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/12 20:33:20 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 22:30:45 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putzesp(char *nbr, t_info *info)
+int	ft_putzesp(char *nbr, t_info *info)
 {
 	int cnt;
 	int len;
@@ -38,7 +38,7 @@ int ft_putzesp(char *nbr, t_info *info)
 	return (cnt);
 }
 
-int ft_putmizesp(char *nbr, t_info *info)
+int	ft_putmizesp(char *nbr, t_info *info)
 {
 	int cnt;
 	int len;
@@ -60,7 +60,7 @@ int ft_putmizesp(char *nbr, t_info *info)
 	return (cnt);
 }
 
-int ft_treatnzero(char *nbr, t_info *info)
+int	ft_treatnzero(char *nbr, t_info *info)
 {
 	int cnt;
 

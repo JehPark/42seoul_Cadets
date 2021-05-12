@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 08:39:16 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/05 08:58:13 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 22:31:03 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_putlstr(const char *str, int len)
 {
-	int 	idx;
+	int		idx;
 	char	*temp;
 
 	idx = 0;

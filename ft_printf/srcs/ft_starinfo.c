@@ -6,13 +6,13 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 10:44:04 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/12 21:00:32 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 22:19:44 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void ft_starinit(t_star *star)
+void	ft_starinit(t_star *star)
 {
 	star->sign = 1;
 	star->dot = 0;
@@ -22,7 +22,7 @@ void ft_starinit(t_star *star)
 	star->isspace = 0;
 }
 
-int ft_setstar_i(const char *str, t_star *star)
+int		ft_setstar_i(const char *str, t_star *star)
 {
 	int cnt;
 
@@ -30,7 +30,7 @@ int ft_setstar_i(const char *str, t_star *star)
 	while (!(ft_isflag(str)))
 	{
 		if (*str == ' ')
-			star->isspace += 1; 
+			star->isspace += 1;
 		else if (*str == '-')
 			star->sign = -1;
 		else if (*str == '*')
@@ -47,7 +47,7 @@ int ft_setstar_i(const char *str, t_star *star)
 	return (cnt);
 }
 
-void ft_setinfost(t_info *info, va_list argv, t_star *star)
+void	ft_setinfost(t_info *info, va_list argv, t_star *star)
 {
 	int digit;
 
@@ -73,10 +73,10 @@ void ft_setinfost(t_info *info, va_list argv, t_star *star)
 	}
 }
 
-int ft_starinfo(const char *str, t_info *info, va_list argv)
+int		ft_starinfo(const char *str, t_info *info, va_list argv)
 {
-	t_star star_i;
-	int cnt;
+	t_star		star_i;
+	int			cnt;
 
 	ft_starinit(&star_i);
 	cnt = ft_setstar_i(str, &star_i);

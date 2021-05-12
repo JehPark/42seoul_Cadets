@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoX.c                                          :+:      :+:    :+:   */
+/*   ft_itox2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 08:48:50 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/02 08:57:27 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 22:28:54 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_itoX(unsigned int nbr)
+char	*ft_itox2(unsigned int nbr)
 {
 	char	*ret;
 	int		size;

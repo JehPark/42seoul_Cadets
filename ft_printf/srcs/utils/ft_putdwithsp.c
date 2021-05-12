@@ -6,13 +6,13 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 10:43:19 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/12 21:01:43 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 22:27:44 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putdfrontsp(char *nbr, t_info *info)
+int		ft_putdfrontsp(char *nbr, t_info *info)
 {
 	int cnt;
 	int len;
@@ -28,7 +28,7 @@ int ft_putdfrontsp(char *nbr, t_info *info)
 	return (cnt);
 }
 
-int ft_putdrearsp(char *nbr, t_info *info)
+int		ft_putdrearsp(char *nbr, t_info *info)
 {
 	int cnt;
 	int len;
@@ -44,7 +44,7 @@ int ft_putdrearsp(char *nbr, t_info *info)
 	return (cnt);
 }
 
-int ft_putfloatzeros(char *nbr, t_info *info)
+int		ft_putfloatzeros(char *nbr, t_info *info)
 {
 	int cnt;
 	int len;
@@ -65,7 +65,7 @@ int ft_putfloatzeros(char *nbr, t_info *info)
 	return (cnt);
 }
 
-int ft_putzeros(char *nbr, t_info *info)
+int		ft_putzeros(char *nbr, t_info *info)
 {
 	int cnt;
 	int len;
@@ -86,7 +86,7 @@ int ft_putzeros(char *nbr, t_info *info)
 	return (cnt);
 }
 
-int ft_putdwithsp(char *nbr, t_info *info)
+int		ft_putdwithsp(char *nbr, t_info *info)
 {
 	int cnt;
 

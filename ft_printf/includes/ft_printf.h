@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 10:05:00 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/12 20:59:08 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 22:29:33 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ int ft_putnstr(const char *str);
 char *ft_itoa(int nbr);
 char *ft_uitoa(unsigned int nbr);
 char *ft_itox(unsigned int nbr);
-char *ft_itoX(unsigned int nbr);
-char *ft_address(unsigned long nbr);
+char *ft_itox2(unsigned int nbr);
+char *ft_address(unsigned long nbr, t_info *info);
 char *ft_itooc(unsigned int nbr);
 int ft_cntdigit(int nbr);
 int ft_cntudigit(unsigned int nbr);

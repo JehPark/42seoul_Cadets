@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 13:10:20 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/07 10:13:28 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 22:30:13 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_putchwiths(char ch, int digit)
 {
-	int 	cnt;
+	int	cnt;
 
 	cnt = 0;
 	if (digit >= 2)

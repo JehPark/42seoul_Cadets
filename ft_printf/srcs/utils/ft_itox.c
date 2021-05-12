@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 08:31:19 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/12 19:22:16 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 22:28:12 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_itox(unsigned int nbr)
 		ret[--size] = nbr % 16 + (nbr % 16 > 9 ? 'a' - 10 : '0');
 		nbr /= 16;
 	}
-	return ret;
+	return (ret);
 }
 
 int		ft_cntoctadigit(unsigned int nbr)

@@ -6,13 +6,13 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 08:55:08 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/12 18:58:26 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 22:17:39 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_bigswitch(t_info *info, char ch, va_list argv)
+int	ft_bigswitch(t_info *info, char ch, va_list argv)
 {
 	int cnt;
 
@@ -28,7 +28,7 @@ int ft_bigswitch(t_info *info, char ch, va_list argv)
 	return (cnt);
 }
 
-int ft_converts(const char *str, va_list argv, int cnt)
+int	ft_converts(const char *str, va_list argv, int cnt)
 {
 	t_info info;
 
@@ -54,10 +54,10 @@ int ft_converts(const char *str, va_list argv, int cnt)
 	return (cnt);
 }
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list argv;
-	int done;
+	int		done;
 
 	va_start(argv, str);
 	done = ft_converts(str, argv, 0);

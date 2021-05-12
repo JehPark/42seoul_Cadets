@@ -6,13 +6,13 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 13:53:06 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/12 16:51:36 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/12 22:26:01 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putswithsp(char *str, t_info *info)
+int		ft_putswithsp(char *str, t_info *info)
 {
 	int cnt;
 	int len;
@@ -39,7 +39,7 @@ int ft_putswithsp(char *str, t_info *info)
 	return (cnt);
 }
 
-int ft_putswithstar(char *str, t_info *info)
+int		ft_putswithstar(char *str, t_info *info)
 {
 	int cnt;
 	int len;
@@ -66,7 +66,7 @@ int ft_putswithstar(char *str, t_info *info)
 	return (cnt);
 }
 
-int ft_putstarstr(const char *str, int len)
+int		ft_putstarstr(const char *str, int len)
 {
 	if (len < 0)
 		return (ft_putlstr(str, ft_strlen((char *)str)));
