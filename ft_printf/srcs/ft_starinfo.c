@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 10:44:04 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/12 22:19:44 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/13 22:25:51 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,79 +20,78 @@ void	ft_starinit(t_star *star)
 	star->iszero = 0;
 	star->innbr = 0;
 	star->isspace = 0;
+	star->isstring = 0;
 }
 
-int		ft_setstar_i(const char *str, t_star *star)
+int		ft_setinfost(const char *str, t_info *info, va_list argv)
 {
 	int cnt;
 
 	cnt = 0;
-	while (!(ft_isflag(str)))
+	if (str[cnt] == '*')
 	{
-		if (*str == ' ')
-			star->isspace += 1;
-		else if (*str == '-')
-			star->sign = -1;
-		else if (*str == '*')
-			star->n_star += 1;
-		else if (*str == '.')
-			star->dot += 1;
-		else if (*str == '0')
-			star->iszero = 1;
-		else if (*str >= '1' && *str <= '9')
-			star->innbr = *str - '0';
-		str++;
+		info->digit = va_arg(argv, int);
+		cnt++;
+	}
+	if (str[cnt] == '.')
+	{
+		cnt++;
+		if (cnt == 2)
+			info->isfloat = 1;
+	}
+	if (str[cnt] == '*')
+	{
+		info->precision = va_arg(argv, int);
+		info->isfloat = 1;
 		cnt++;
 	}
 	return (cnt);
 }
 
-void	ft_setinfost(t_info *info, va_list argv, t_star *star)
-{
-	int digit;
-
-	digit = 0;
-	if ((star->n_star == 1 && star->dot == 0) || star->iszero)
-	{
-		digit = va_arg(argv, int);
-		if (star->sign < 0 && digit > 0)
-			info->digit = digit * -1;
-		else
-			info->digit = digit;
-	}
-	else if (star->n_star == 1 && star->dot == 1 && !star->iszero)
-		info->precision = va_arg(argv, int);
-	else if (star->n_star == 2 && star->dot == 1)
-	{
-		digit = va_arg(argv, int);
-		if (star->sign < 0 && digit > 0)
-			info->digit = digit * -1;
-		else
-			info->digit = digit;
-		info->precision = va_arg(argv, int);
-	}
-}
-
 int		ft_starinfo(const char *str, t_info *info, va_list argv)
 {
-	t_star		star_i;
-	int			cnt;
+	t_star	star_i;
+	int		cnt;
 
+	cnt = 0;
 	ft_starinit(&star_i);
-	cnt = ft_setstar_i(str, &star_i);
-	ft_setinfost(info, argv, &star_i);
-	if (star_i.iszero)
-		info->iszero = 1;
-	info->isstar = 1;
-	if (star_i.dot)
-		info->isfloat = 1;
-	if (star_i.isspace)
-		info->isspace = star_i.isspace;
-	if (star_i.dot == 1 && star_i.n_star == 1 && star_i.innbr)
+	cnt += ft_starzemi((char *)str, &star_i);
+	if ('0' <= *(str + cnt) && *(str + cnt) <= '9')
+		info->digit = ft_atoi((char *)(str + cnt));
+	while ('0' <= *(str + cnt) && *(str + cnt) <= '9')
+		cnt++;
+	cnt += ft_setinfost(str + cnt, info, argv);
+	info->digit = info->digit > 0 ? info->digit * star_i.sign : info->digit;
+	info->iszero = star_i.iszero ? 1 : 0;
+	if ( '0' <= *(str + cnt) && *(str + cnt) <= '9')
 	{
-		info->digit = info->precision * star_i.sign;
-		info->precision = star_i.innbr;
-		info->special = 1;
+		info->precision = ft_atoi((char *)(str + cnt));
+		info->isfloat = 1;
+	}
+	while ('0' <= *(str + cnt) && *(str + cnt) <= '9')
+		cnt++;
+	return (cnt);
+}
+
+int		ft_starzemi(char *str, t_star *star)
+{
+	int cnt;
+
+	cnt = 0;
+	if (*str == '0' || *str == '-')
+	{
+		if (*str == '-')
+			star->sign = -1;
+		else
+			star->iszero = 1;
+		str++;
+		cnt++;
+	}
+	if (*str == '-' || *str == '0')
+	{
+		star->iszero = 0;
+		star->sign = -1;
+		return (2);
 	}
 	return (cnt);
 }

@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 08:55:08 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/12 22:17:39 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/13 23:04:45 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int	ft_converts(const char *str, va_list argv, int cnt)
 	{
 		if (*str == '%')
 		{
-			str++;
-			if (ft_isstar(str))
+			ft_infoinit(&info);
+			if (ft_isstar(++str))
 				str += ft_starinfo(str, &info, argv);
 			else if (ft_isnum(*str))
 				str += ft_mkinfo(str, &info);

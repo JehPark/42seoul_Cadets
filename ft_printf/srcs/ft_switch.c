@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 15:25:47 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/12 22:29:12 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/13 17:35:54 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,14 @@ int			ft_switchchar(char mk, va_list argv, t_info *info)
 	if (mk == 'c')
 	{
 		ch = va_arg(argv, int);
-		cnt = ft_putchwiths(ch, info->digit);
+		cnt = ft_putchwiths(ch, info);
 	}
 	else if (mk == 's')
 	{
 		str = va_arg(argv, char *);
 		if (str == NULL)
 			ft_treatnull(&str, info);
-		if (info->isstar)
-			cnt = ft_putswithstar(str, info);
-		else
-			cnt = ft_putswithsp(str, info);
+		cnt = ft_putswithsp(str, info);
 	}
 	return (cnt);
 }

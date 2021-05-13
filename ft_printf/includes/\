@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 10:05:00 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/13 23:48:46 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/13 16:33:38 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ int					ft_floatinfo(const char *str, t_info *info);
 
 int					ft_starinfo(const char *str, t_info *info, va_list argv);
 void				ft_starinit(t_star *star);
-int					ft_setinfost(const char *str, t_info *info, va_list argv);
+int					ft_setstar_i(const char *str, t_star *star);
+void				ft_setinfost(t_info *info, va_list argv, t_star *star);
 
 int					ft_putchar(const char ch);
 int					ft_putnstr(const char *str);
@@ -99,8 +100,7 @@ int					ft_putzesp(char *nbr, t_info *info);
 int					ft_putmizesp(char *nbr, t_info *info);
 int					ft_treatnzero(char *nbr, t_info *info);
 int					ft_isstar(const char *str);
-int					ft_putstarstr(const char *str, int *len, t_info *info);
-int					ft_starzemi(char *str, t_star *star);
-char				*ft_addrzero(unsigned long nbr, t_info *info);
+int					ft_putswithstar(char *str, t_info *info);
+int					ft_putstarstr(const char *str, int len);
 
 #endif

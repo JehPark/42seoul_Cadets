@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:04:26 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/12 22:15:42 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/13 19:58:03 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ int		ft_intinfo(const char *str, t_info *info)
 	if (*temp == '+' || *temp == '-')
 		sign = *temp++ == '-' ? -1 : 1;
 	start = temp;
+	while ('0' <= *temp && *temp <= '9')
+		temp++;
+	if (*temp == '+' || *temp == '-')
+		sign = *temp++ == '-' ? -1 : 1;
 	while ('0' <= *temp && *temp <= '9')
 		temp++;
 	if (!(nbr = (char *)malloc(temp - start + 1)))

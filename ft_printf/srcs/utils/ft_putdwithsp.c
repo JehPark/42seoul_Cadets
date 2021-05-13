@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 10:43:19 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/12 22:27:44 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/13 21:57:16 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,8 @@ int		ft_putdwithsp(char *nbr, t_info *info)
 	cnt = 0;
 	if (info->isspace)
 		cnt += ft_printsp(info->isspace, ' ');
-	if (info->special && info->digit > 0 && info->isfloat)
-		cnt += ft_putzesp(nbr, info);
-	else if (info->isstar && info->precision != 0 && info->digit == 0)
+	if (info->isstar && info->precision != 0 && info->digit == 0)
 		cnt += ft_putfloatzeros(nbr, info);
-	else if (info->isstar && info->precision != 0)
-		cnt += ft_putswithstar(nbr, info);
 	else if (ft_strlen(nbr) == 1 && *nbr == '0' && info->isfloat)
 		cnt += ft_treatnzero(nbr, info);
 	else if (info->digit == 0 && info->precision == 0)
@@ -107,5 +103,6 @@ int		ft_putdwithsp(char *nbr, t_info *info)
 		cnt += ft_putdfrontsp(nbr, info);
 	else
 		cnt += ft_putdwithsp2(nbr, info);
+	free(nbr);
 	return (cnt);
 }

@@ -6,16 +6,18 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 13:10:20 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/12 22:30:13 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/13 15:44:30 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putchwiths(char ch, int digit)
+int		ft_putchwiths(char ch, t_info *info)
 {
 	int	cnt;
+	int	digit;
 
+	digit = info->digit;
 	cnt = 0;
 	if (digit >= 2)
 	{

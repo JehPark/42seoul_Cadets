@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 14:24:35 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/07 10:24:52 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/13 17:39:38 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,10 @@ void	ft_treatnull(char **str, t_info *info)
 		*str = "(null)";
 	else
 		*str = "(null)";
+	if (info->isstar)
+	{
+		info->precision = 0;
+		info->digit = 0;
+		info->isfloat = 0;
+	}
 }
