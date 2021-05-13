@@ -73,5 +73,6 @@ ft_printf is on progress.
 Basic structure was completed and I read whole 42 seoul slacks about gnl and I decides to use linked list to save fd structures.
 
 5/12/2021
-I aced this project.
+I aced this project.  
+
 ![alt text](./Results/GNLResults.png?raw=true)
