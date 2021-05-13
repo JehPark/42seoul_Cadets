@@ -74,4 +74,4 @@ Basic structure was completed and I read whole 42 seoul slacks about gnl and I d
 
 5/12/2021
 I aced this project.
-![alt text](./Results/GNLResults?raw=true)
+![alt text](./Results/GNLResults.png?raw=true)
