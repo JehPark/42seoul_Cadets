@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 10:44:04 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/14 14:10:04 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/14 18:26:07 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,11 @@ int		ft_starzemi(char *str, t_star *star)
 	}
 	while (str[cnt] == '-' || str[cnt] == '0')
 	{
-		star->iszero = 0;
-		star->sign = -1;
+		if (str[cnt] == '-')
+		{
+			star->iszero = 0;
+			star->sign = -1;
+		}
 		cnt++;
 	}
 	return (cnt);
