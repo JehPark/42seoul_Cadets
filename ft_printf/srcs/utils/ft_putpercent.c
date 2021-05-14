@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 10:05:33 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/07 10:15:03 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/14 17:41:29 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		ft_putpercent(t_info *info)
 	cnt++;
 	if (info->digit <= -2)
 	{
-		ft_printsp(-(info->digit + 1), sp);
+		ft_printsp(-(info->digit + 1), ' ');
 		cnt += -(info->digit + 1);
 	}
 	return (cnt);

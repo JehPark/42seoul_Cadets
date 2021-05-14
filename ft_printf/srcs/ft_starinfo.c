@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 10:44:04 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/14 14:03:21 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/14 14:10:04 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int		ft_starinfo(const char *str, t_info *info, va_list argv)
 	cnt += ft_setinfost(str + cnt, info, argv);
 	info->digit = info->digit > 0 ? info->digit * star_i.sign : info->digit;
 	info->iszero = star_i.iszero ? 1 : 0;
-	if ( '0' <= *(str + cnt) && *(str + cnt) <= '9')
+	if ('0' <= *(str + cnt) && *(str + cnt) <= '9')
 	{
 		info->precision = ft_atoi((char *)(str + cnt));
 		info->isfloat = 1;

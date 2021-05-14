@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 10:43:19 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/14 13:34:03 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/14 14:09:28 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int		ft_putdwithsp(char *nbr, t_info *info)
 	cnt = 0;
 	if (info->isspace)
 		cnt += ft_printsp(info->isspace, ' ');
-	if (info->risk && info->digit >0 &&info->iszero && info->precision < 0)
+	if (info->risk && info->digit > 0 && info->iszero && info->precision < 0)
 		cnt += ft_putzeros(nbr, info);
 	else if (info->isstar && info->precision != 0 && info->digit == 0)
 		cnt += ft_putfloatzeros(nbr, info);

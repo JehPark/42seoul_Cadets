@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 15:25:47 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/14 12:44:41 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/14 17:51:08 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int			ft_switchchar(char mk, va_list argv, t_info *info)
 	cnt = 0;
 	if (mk == '%')
 		cnt = ft_putpercent(info);
-	if (mk == 'c')
+	else if (mk == 'c')
 	{
 		ch = va_arg(argv, int);
 		cnt = ft_putchwiths(ch, info);
