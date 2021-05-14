@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 10:44:04 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/13 22:25:51 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/14 14:03:21 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int		ft_setinfost(const char *str, t_info *info, va_list argv)
 	int cnt;
 
 	cnt = 0;
+	info->risk = 1;
 	if (str[cnt] == '*')
 	{
 		info->digit = va_arg(argv, int);
@@ -84,14 +85,13 @@ int		ft_starzemi(char *str, t_star *star)
 			star->sign = -1;
 		else
 			star->iszero = 1;
-		str++;
 		cnt++;
 	}
-	if (*str == '-' || *str == '0')
+	while (str[cnt] == '-' || str[cnt] == '0')
 	{
 		star->iszero = 0;
 		star->sign = -1;
-		return (2);
+		cnt++;
 	}
 	return (cnt);
 }

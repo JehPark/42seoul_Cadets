@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 13:53:06 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/13 19:48:42 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/14 12:30:16 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_putswithsp(char *str, t_info *info)
 	cnt = 0;
 	len = ft_strlen(str);
 	prec = info->precision;
-	if (info->isfloat)
+	if (info->isfloat && prec >= 0)
 		len = prec < ft_strlen(str) ? prec : ft_strlen(str);
 	if (info->digit - len > 0 && info->digit != 0)
 	{

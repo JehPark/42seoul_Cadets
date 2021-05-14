@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:04:26 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/13 19:58:03 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/14 13:41:37 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,19 @@ int		ft_isfloat(char *str, t_info *info)
 	return (0);
 }
 
+int		ft_consign(char *str, int *sign)
+{
+	int cnt;
+
+	cnt = 0;
+	while (str[cnt] == '+' || str[cnt] == '-')
+	{
+		*sign = -1;
+		cnt++;
+	}
+	return (cnt);
+}
+
 int		ft_intinfo(const char *str, t_info *info)
 {
 	char	*temp;
@@ -36,13 +49,11 @@ int		ft_intinfo(const char *str, t_info *info)
 
 	sign = 1;
 	temp = (char *)str;
-	if (*temp == '+' || *temp == '-')
-		sign = *temp++ == '-' ? -1 : 1;
+	temp += ft_consign((char *)temp, &sign);
 	start = temp;
 	while ('0' <= *temp && *temp <= '9')
 		temp++;
-	if (*temp == '+' || *temp == '-')
-		sign = *temp++ == '-' ? -1 : 1;
+	temp += ft_consign((char *)temp, &sign);
 	while ('0' <= *temp && *temp <= '9')
 		temp++;
 	if (!(nbr = (char *)malloc(temp - start + 1)))
@@ -62,8 +73,7 @@ int		ft_floatinfo(const char *str, t_info *info)
 
 	sign = 1;
 	temp = (char *)str;
-	if (*temp == '+' || *temp == '-')
-		sign = *temp++ == '-' ? -1 : 1;
+	temp += ft_consign((char *)temp, &sign);
 	start = temp;
 	while (('0' <= *temp && *temp <= '9') || *temp == '.')
 		temp++;

@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 10:05:00 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/13 23:48:46 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/14 13:31:26 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef	struct		s_info
 	int	isnull;
 	int	special;
 	int	isspace;
+	int risk;
 }					t_info;
 
 typedef struct		s_star
@@ -102,5 +103,6 @@ int					ft_isstar(const char *str);
 int					ft_putstarstr(const char *str, int *len, t_info *info);
 int					ft_starzemi(char *str, t_star *star);
 char				*ft_addrzero(unsigned long nbr, t_info *info);
+int					ft_consign(char *str, int *sign);
 
 #endif

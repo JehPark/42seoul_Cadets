@@ -6,7 +6,7 @@
 /*   By: jehpark <jehpark@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 08:57:33 by jehpark           #+#    #+#             */
-/*   Updated: 2021/05/13 23:56:41 by jehpark          ###   ########.fr       */
+/*   Updated: 2021/05/14 12:46:10 by jehpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,19 @@ char	*ft_addrzero(unsigned long nbr, t_info *info)
 
 	if (nbr == 0 && info->isfloat && info->precision == 0)
 	{
-		ret = (char *)malloc(2);
+		ret = (char *)malloc(3);
 		ret[0] = '0';
 		ret[1] = 'x';
+		ret[2] = '\0';
 		return (ret);
 	}
 	else
 	{
-		ret = (char *)malloc(3);
+		ret = (char *)malloc(4);
 		ret[0] = '0';
 		ret[1] = 'x';
 		ret[2] = '0';
+		ret[3] = '\0';
 		return (ret);
 	}
 }
