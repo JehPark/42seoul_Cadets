@@ -50,30 +50,6 @@ int pop(t_node **root)
 	return (ret);
 }
 
-t_node *last(t_node **root)
-{
-	t_node *tmp;
-
-	if (!*root)
-		return (0);
-	tmp = *root;
-	while (tmp->next)
-		tmp = tmp->next;
-	return (tmp);
-}
-
-t_node *last_prev(t_node **root)
-{
-	t_node *tmp;
-
-	if (!*root || !(*root->next))
-		return (0);
-	tmp = *root;
-	while (tmp->next->next)
-		tmp = tmp->next;
-	return (tmp);
-}
-
 int peek(t_node *root)
 {
 	if (isEmpty(root))

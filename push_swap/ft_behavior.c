@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int swap(t_node **root)
+int swap(t_node **root, int flag)
 {
     int nbr1;
     int nbr2;
@@ -23,10 +23,14 @@ int swap(t_node **root)
     nbr2 = pop(root);
     push(root, nbr1);
     push(root, nbr2);
+    if (flag == 1)
+        write(1, "sa\n", 3);
+    else
+        write(1, "sb\n", 3);
     return (1);
 }
 
-int move(t_node **r1, t_node **r2)
+int move(t_node **r1, t_node **r2, int flag)
 {
     int nbr;
 
@@ -34,30 +38,14 @@ int move(t_node **r1, t_node **r2)
         return (0);
     nbr = pop(r1);
     push(r2, nbr);
+    if (flag == 1)
+        write(1, "pa\n", 3);
+    else
+        write(1, "pb\n", 3);
     return (1);
 }
 
-int bottom_up(t_node **root)
-{
-    t_node *prev;
-    t_node *cur;
-
-    if (!*root)
-        return (0);
-    prev = *root;
-    cur = prev->next;
-    prev->next = NULL;
-    while (cur)
-    {
-        cur->next = prev;
-        prev->next = NULL;
-        prev = cur;
-        cur = cur->next;
-    }
-    return (1);
-}
-
-int rotate(t_node **root)
+int rotate(t_node **root, int flag)
 {
     t_node *last;
     t_node *first;
@@ -69,10 +57,14 @@ int rotate(t_node **root)
     *root = *root->next;
     first->next = NULL;
     last->next = first;
+    if (flag == 1)
+        write(1, "ra\n", 3);
+    else
+        write(1, "rb\n", 3);
     return (1);
 }
 
-int rev_rotate(t_node **root)
+int rev_rotate(t_node **root, int flag)
 {
     t_node *last_prev;
     t_node *first;
@@ -86,5 +78,9 @@ int rev_rotate(t_node **root)
     last_prev->next = NULL;
     last->next = first;
     *root = last;
+    if (flag == 1)
+        write(1, "rra\n", 4);
+    else
+        write(1, "rrb\n", 4);
     return (1);
 }
