@@ -73,9 +73,15 @@ I finished them all but I didn't have a chance to submit it.
 - I started gnl.
 
 5/10/2021
-Basic structure was completed and I read whole 42 seoul slacks about gnl and I decides to use linked list to save fd structures.
+- Basic structure was completed and I read whole 42 seoul slacks about gnl and I decides to use linked list to save fd structures.
 
 5/12/2021
-I aced this project.  
+- I aced this project.  
 
 ![alt text](./Results/GNLResults.png?raw=true)
+
+## push_swap
+### The main goal of this project is to understand basic behavior of stacks
+
+5/17/2021  
+- Basic behavior finished  
