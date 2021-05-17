@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-t_node		newNode(int data)
+t_node newNode(int data)
 {
-	t_node	*new_node;
+	t_node *new_node;
 
 	new_node = (t_node *)malloc(sizeof(struct t_node));
 	new_node->data = data;
@@ -22,24 +22,24 @@ t_node		newNode(int data)
 	return (new_node);
 }
 
-int			isEmpty(t_node *root)
+int isEmpty(t_node *root)
 {
 	return (!root);
 }
 
-void		push(t_node **root, int data)
+void push(t_node **root, int data)
 {
-	t_node	node;
+	t_node node;
 
 	node = newNode(data);
 	node->next = *root;
 	*root = stackNode;
 }
 
-int			pop(t_node **root)
+int pop(t_node **root)
 {
-	t_node 	*temp;
-	int		ret;
+	t_node *temp;
+	int ret;
 
 	if (isEmpty(*root))
 		return (-2147483648);
@@ -50,7 +50,31 @@ int			pop(t_node **root)
 	return (ret);
 }
 
-int			peek(t_node *root)
+t_node *last(t_node **root)
+{
+	t_node *tmp;
+
+	if (!*root)
+		return (0);
+	tmp = *root;
+	while (tmp->next)
+		tmp = tmp->next;
+	return (tmp);
+}
+
+t_node *last_prev(t_node **root)
+{
+	t_node *tmp;
+
+	if (!*root || !(*root->next))
+		return (0);
+	tmp = *root;
+	while (tmp->next->next)
+		tmp = tmp->next;
+	return (tmp);
+}
+
+int peek(t_node *root)
 {
 	if (isEmpty(root))
 		return (-2147483648);

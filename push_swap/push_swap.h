@@ -11,15 +11,22 @@
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#define PUSH_SWAP_H
 
-typedef struct 		s_node
+typedef struct s_node
 {
-	int		data;
-	t_node	next;
-}					t_node;
+	int data;
+	t_node next;
+} t_node;
 
 #include <unistd.h>
 #include <stdlib.h>
+
+t_node newNode(int data);
+int isEmpty(t_node *root);
+void push(t_node **root, int data);
+int pop(t_node **root);
+int peek(t_node *root);
+int swap(t_node **root);
 
 #endif
