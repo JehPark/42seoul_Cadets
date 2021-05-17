@@ -84,4 +84,4 @@ I finished them all but I didn't have a chance to submit it.
 ### The main goal of this project is to understand basic behavior of stacks
 
 5/17/2021  
-- Basic behavior finished  
+- Basic behavior finished. I decided to use quicksort but there are a lot of things to think. Wish me good luck
