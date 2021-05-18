@@ -15,8 +15,9 @@
 
 typedef struct s_node
 {
-	int data;
-	t_node next;
+	int *data;
+	int size;
+	int top;
 } t_node;
 
 #include <unistd.h>

@@ -12,75 +12,58 @@
 
 #include "push_swap.h"
 
-int quicksort(t_node **s1, t_node **s2, int start, int end)
+int quicksort(t_node **a_stack, t_node **b_stack, int size, int flag)
 {
     int part;
 
-    if (start < end)
+    if (size < 6)
     {
-        part = partition(s1, s2, end);
-        quicksort(s1, s2, start, part - 1);
-        quicksort(s2, s1, part + 1, end);
+        realsort(a_stack, size, flag);
+    }
+    else
+    {
+        part = partition(a_stack, b_stack, size, flag);
+        quicksort(a_stack, b_stack, size - part, 1);
+        quicksort(b_stack, a_stack, part, 0);
     }
 }
 
-int partition(t_node **s1, t_node **s2, int idx)
+int partition(t_node **a_stack, t_node **b_stack, int size, int flag)
 {
-    int stand;
-    t_node tmp;
     int ret;
+    int target;
 
-    tmp = *s1;
-    while (idx)
-    {
-        tmp = tmp->next;
-        idx--;
-    }
-    stand = tmp->data;
     ret = 0;
-    while (tmp)
-    {
-        if (*s1->data >= stand)
-            move(s1, s2, 1);
-        else
-        {
-            rotate(s1, 1);
-            ret++;
-        }
-    }
+    if (issorted(a_stack, flag, size))
+        return (ret);
+    target = (*a_stack->data)[*a_stack->top - size / 2];
+    while (size--)
+        ret += divide(a_stack, b_stack, flag);
     return (ret);
 }
 
-int issorted(t_node **root)
+int divide(t_node **a_stack, t_node **b_stack, int flag)
 {
-    int tmp;
-    t_node *cur;
+}
 
-    tmp = *root->data;
-    cur = *root->next;
-    while (*root)
+int issorted(t_node **root, int flag, int size)
+{
+    t_node *tmp;
+    int i;
+
+    tmp = *root;
+    i = tmp->top;
+    if (flag)
     {
-        if (tmp > cur->data)
-            return (0);
-        cur = cur->next;
+        while (i > tmp->top - size)
+            if ((tmp->data)[i - 1] < (tmp->data)[i--])
+                return (0);
+    }
+    else
+    {
+        while (i > tmp->top - size)
+            if ((tmp->data)[i - 1] > (tmp->data)[i--])
+                return (0);
     }
     return (1);
-}
-
-int isrotate(t_node **root)
-{
-    rotate(root);
-    if (issorted(root))
-        return (1);
-    rev_rotate(root);
-    return (0);
-}
-
-int isrevrotate(t_node **root)
-{
-    rev_rotate(root);
-    if (issorted(root))
-        return (1);
-    rev_rotate(root);
-    return (0);
 }
