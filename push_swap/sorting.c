@@ -20,12 +20,9 @@ int quicksort(t_node **a_stack, t_node **b_stack, int size, int flag)
     {
         realsort(a_stack, size, flag);
     }
-    else
-    {
-        part = partition(a_stack, b_stack, size, flag);
-        quicksort(a_stack, b_stack, size - part, 1);
-        quicksort(b_stack, a_stack, part, 0);
-    }
+    part = partition(a_stack, b_stack, size, flag);
+    quicksort(a_stack, b_stack, size - part, 1);
+    quicksort(b_stack, a_stack, part, 0);
 }
 
 int partition(t_node **a_stack, t_node **b_stack, int size, int flag)
@@ -38,12 +35,30 @@ int partition(t_node **a_stack, t_node **b_stack, int size, int flag)
         return (ret);
     target = (*a_stack->data)[*a_stack->top - size / 2];
     while (size--)
-        ret += divide(a_stack, b_stack, flag);
+    {
+        if (divide(a_stack, b_stack, flag, target))
+            ret++;
+        else
+            rotate(a_stack, flag);
+    }
     return (ret);
 }
 
-int divide(t_node **a_stack, t_node **b_stack, int flag)
+int divide(t_node **a_stack, t_node **b_stack, int flag, int stand)
 {
+    if (stand > peek(a_stack))
+    {
+        move(a_stack, b_stack, flag);
+        return (1);
+    }
+    else if (stand > peeklast(a_stack))
+    {
+        rev_rotate(a_stack, flag);
+        move(a_stack, b_stack, flag);
+        return (1);
+    }
+    else
+        return (0);
 }
 
 int issorted(t_node **root, int flag, int size)
