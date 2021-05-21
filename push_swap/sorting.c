@@ -12,17 +12,20 @@
 
 #include "push_swap.h"
 
-int quicksort(t_node **a_stack, t_node **b_stack, int size, int flag)
+void quicksort(t_node **a_stack, t_node **b_stack, int size, int flag)
 {
     int part;
-
-    if (size < 6)
+    if (size < 2)
+        return;
+    if (size < 4)
     {
         realsort(a_stack, size, flag);
     }
     part = partition(a_stack, b_stack, size, flag);
     quicksort(a_stack, b_stack, size - part, 1);
     quicksort(b_stack, a_stack, part, 0);
+    while (!(isEmpty(b_stack)))
+        move(b_stack, a_stack, 0);
 }
 
 int partition(t_node **a_stack, t_node **b_stack, int size, int flag)

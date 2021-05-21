@@ -70,3 +70,10 @@ int peek(t_node *root)
 		return (-2147483648);
 	return ((root->data)[root->top]);
 }
+
+int peeklast(t_node *root)
+{
+	if (isEmpty(root))
+		return (-2147483648);
+	return ((root->data)[0]);
+}

@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 t_node *last(t_node **root)
 {
     t_node *tmp;
