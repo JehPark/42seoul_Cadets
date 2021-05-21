@@ -85,3 +85,6 @@ I finished them all but I didn't have a chance to submit it.
 
 5/17/2021  
 - Basic behavior finished. I decided to use quicksort but there are a lot of things to think. Wish me good luck
+
+5/21/2021  
+- I need to fix a lot of bugs and verify my program.  
