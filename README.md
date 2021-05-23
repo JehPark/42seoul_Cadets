@@ -67,6 +67,9 @@ ft_printf is on progress.
 5/14/2021
 I finished them all but I didn't have a chance to submit it.
 
+5/23/2021
+Minor changes
+
 ## get_next_line
 ### The main goal of this project is to understand static variable and buffer.
 5/9/2021
