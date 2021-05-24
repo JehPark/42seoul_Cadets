@@ -73,4 +73,20 @@ void descending(t_node **root, int first, int second, int third)
     max = findmax(first, second, third);
     min = findmin(first, second, third);
     mid = findmid(first, second, third);
+    if (mid == first && min == second && max == third)
+        rev_rotate(root, 0);
+    else if (min == first && max == second && mid == third)
+        rotate(root, 0);
+    else if (mid == first && max == second && min == third)
+        swap(root, 0);
+    else if (min == first && mid == second && max == third)
+    {
+        swap(root, 0);
+        rev_rotate(root, 0);
+    }
+    else if (max == first && min == second && mid == third)
+    {
+        swap(root, 0);
+        rotate(root, 0);
+    }
 }
