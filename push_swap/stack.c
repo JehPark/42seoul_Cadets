@@ -39,7 +39,7 @@ void push(t_node **root, int data)
 	t_node *ret;
 
 	ret = *root;
-	if (*root->top > size * 3 / 4)
+	if (*root->top >= size * 3 / 4)
 	{
 		ret = nodeinit(*root->data, root->size);
 		free(root->data);
