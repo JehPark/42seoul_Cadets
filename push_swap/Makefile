@@ -8,6 +8,7 @@ FUNC = basicsort \
 	ft_behavior \
 	sorting \
 	stack \
+	stack2 \
 	utils \
 	utils2
 

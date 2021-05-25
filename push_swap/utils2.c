@@ -34,3 +34,32 @@ int findmid(int first, int second, int third)
     else
         return (third);
 }
+
+void putzeros(t_node **root)
+{
+    *root->data = 0;
+    *root->size = 0;
+    *root->top = 0;
+}
+
+int errorcheck(char **strs, int size)
+{
+    int i;
+    int j;
+
+    i = 0;
+    while (i < size)
+    {
+        j = 0;
+        if (strs[i][j] == '+' || strs[i][j] == '-')
+            j++;
+        while (strs[i][j])
+        {
+            if (strs[i][j] > '9' || strs[i][j] < '0')
+                return (1);
+            j++;
+        }
+        i++;
+    }
+    return (0);
+}

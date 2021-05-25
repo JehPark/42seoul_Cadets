@@ -12,45 +12,30 @@
 
 #include "push_swap.h"
 
-int *changestr(char **argv, int size)
+int pop(t_node **root)
 {
-    int *data;
-    int i;
+    t_node *temp;
+    int ret;
 
-    data = (int *)malloc(sizeof(int) * size * 2);
-    i = 0;
-    while (i < size)
-    {
-        data[i] = ft_atoi(argv[i]);
-        i++;
-    }
-    return (data);
+    if (isEmpty(*root))
+        return (-2147483648);
+    temp = *root;
+    ret = (temp->data)[temp->top];
+    (temp->data)[temp->top] = -1;
+    temp->top--;
+    return (ret);
 }
 
-void putstack(t_node **root, char **argv, int size)
+int peek(t_node *root)
 {
-    int *arr;
-
-    *root->data = changestr(argv, size);
-    *root->size = 2 * size;
-    *root->top = size - 1;
+    if (isEmpty(root))
+        return (-2147483648);
+    return ((root->data)[root->top]);
 }
 
-int main(int argc, char **argv)
+int peeklast(t_node *root)
 {
-    t_node *a_stack;
-    t_node *b_stack;
-
-    putzeros(&a_stack);
-    putzeros(&b_stack);
-    if (argc > 1)
-    {
-        putstack(&a_stack, ++argv, --argc);
-        if (errorcheck(argv, argc))
-            write(1, "Error\n", 6);
-        quicksort(&a_stack, &b_stack, argc, 1);
-    }
-    else
-        write(1, "Error\n", 6);
-    return (0);
+    if (isEmpty(root))
+        return (-2147483648);
+    return ((root->data)[0]);
 }
