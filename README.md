@@ -91,3 +91,6 @@ Minor changes
 
 5/21/2021  
 - I need to fix a lot of bugs and verify my program.  
+
+5/25/2021  
+- I finished basic requirement of subject.  
