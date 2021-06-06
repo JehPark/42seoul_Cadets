@@ -94,3 +94,9 @@ Minor changes
 
 5/25/2021  
 - I finished basic requirement of subject.  
+
+## OS practice
+
+5 / 26 / 2021
+I started basic operating systems. 
+
